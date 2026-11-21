@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Receita de Ouro — Descubra seu Kit de Biscoitos de Natal</title>
+<title>Receitas Virais de Natal — Descubra seu Kit de Biscoitos</title>
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -84,6 +84,17 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   .proof-row{display:flex;gap:10px;margin-top:18px}
   .proof-thumb{flex:1;border-radius:10px;overflow:hidden;box-shadow:0 8px 16px rgba(42,28,20,.18);border:3px solid #fff}
   .proof-thumb img{width:100%;display:block}
+
+  /* TELA DE PROVA SOCIAL GRANDE (enquanto "identifica o perfil") */
+  .proofreveal{align-items:center;justify-content:center;text-align:center;gap:6px}
+  .proofreveal .micro-spinner{margin:0 auto 6px}
+  #proofTitle{color:var(--red-dark);font-size:19px;margin-bottom:14px}
+  .proof-big{width:100%;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);border:4px solid #fff;margin-bottom:14px}
+  .proof-big img{width:100%;display:block}
+  .proof-caption{font-weight:800;color:var(--ink);font-size:16.5px;margin-bottom:16px;min-height:44px}
+  .proof-dots{display:flex;gap:7px;justify-content:center}
+  .proof-dots span{width:8px;height:8px;border-radius:50%;background:#EADFC3}
+  .proof-dots span.on{background:var(--green-vivid)}
   .mini-stats{display:flex;gap:14px;margin-top:16px;justify-content:center}
   .mini-stats div{text-align:center}
   .mini-stats .n{font-family:'Playfair Display',serif;font-weight:800;color:var(--red-dark);font-size:22px;display:block}
@@ -164,18 +175,20 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   <div class="topbar" id="topbar" style="display:none">
     <button class="back-btn" onclick="goBack()" aria-label="Voltar">‹</button>
     <div class="progress-outer"><div class="progress-inner" id="progressBar"></div></div>
-    <span class="step-count" id="stepCount"></span>
   </div>
 
   <!-- Q1: abre direto com pergunta objetiva + promessa -->
   <section class="screen active q" id="screen-q1">
-    <span class="gold-badge">🔑 Em 1 minuto, sua Receita de Ouro</span>
+    <span class="gold-badge">🔑 Em 1 minuto, suas Receitas Virais de Natal</span>
     <p class="promise-line">Responda e eu monto sua <b>recomendação personalizada</b> de receita, preço e embalagem pro seu perfil — mesmo que você nunca tenha vendido um biscoito de Natal na vida.</p>
     <h2 class="q-title">Você já é confeiteira profissional ou está começando agora com biscoitos de Natal?</h2>
     <div class="options">
       <button class="opt" onclick="answer('q1','profissional','Já trabalho com confeitaria e quero vender mais no Natal',this)"><span class="emoji">🚀</span> Já trabalho com confeitaria e quero vender mais no Natal</button>
+      <button class="opt" onclick="answer('q1','profissional','Sou confeiteira, mas biscoito de Natal ainda não é meu forte',this)"><span class="emoji">🎂</span> Sou confeiteira, mas biscoito de Natal ainda não é meu forte</button>
       <button class="opt" onclick="answer('q1','crescimento','Já faço doces por encomenda, quero uma nova fonte de renda',this)"><span class="emoji">📈</span> Já faço doces por encomenda, quero uma nova fonte de renda</button>
+      <button class="opt" onclick="answer('q1','crescimento','Vendo de vez em quando pra amigos e família',this)"><span class="emoji">🛍️</span> Vendo de vez em quando pra amigos e família</button>
       <button class="opt" onclick="answer('q1','iniciante','Nunca vendi biscoitos, mas quero começar esse Natal',this)"><span class="emoji">🌱</span> Nunca vendi biscoitos, mas quero começar esse Natal</button>
+      <button class="opt" onclick="answer('q1','iniciante','Sempre quis ter meu próprio negócio de doces',this)"><span class="emoji">✨</span> Sempre quis ter meu próprio negócio de doces</button>
     </div>
   </section>
 
@@ -202,6 +215,8 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
       <button class="opt" onclick="answer('q2','receita','Não tenho receitas confiáveis, tenho medo de errar',this)"><span class="emoji">📖</span> Não tenho receitas confiáveis, tenho medo de errar</button>
       <button class="opt" onclick="answer('q2','embalagem','Não sei deixar bonito e montar embalagens que encantam',this)"><span class="emoji">🎀</span> Não sei deixar bonito e montar embalagens que encantam</button>
       <button class="opt" onclick="answer('q2','venda','Não sei como divulgar e conseguir clientes',this)"><span class="emoji">📣</span> Não sei como divulgar e conseguir clientes</button>
+      <button class="opt" onclick="answer('q2','tempo','Não tenho tempo pra organizar tudo sozinha',this)"><span class="emoji">⏰</span> Não tenho tempo pra organizar tudo sozinha</button>
+      <button class="opt" onclick="answer('q2','recomeco','Já tentei antes e não deu certo',this)"><span class="emoji">😓</span> Já tentei antes e não deu certo</button>
     </div>
   </section>
 
@@ -209,7 +224,7 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   <section class="screen break" id="screen-break1">
     <div class="break-card">
       <span class="green-badge">💬 Uma pausa rápida</span>
-      <h2 id="break1Title">Essa Receita de Ouro não é pra qualquer uma</h2>
+      <h2 id="break1Title">Essas Receitas Virais de Natal não são pra qualquer uma</h2>
       <p id="break1Desc">É pra quem se encaixa em pelo menos uma dessas situações:</p>
       <ul>
         <li>🙋‍♀️ Já vende, mas sente que cobra barato demais pelo que entrega</li>
@@ -235,8 +250,19 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
       <button class="opt" onclick="answer('q3','recusei','Recusei pedido com medo de cobrar errado',this)"><span class="emoji">😣</span> Recusei pedido com medo de cobrar errado</button>
       <button class="opt" onclick="answer('q3','vi_outras','Vi outras vendendo e fiquei só pensando em começar',this)"><span class="emoji">👀</span> Vi outras vendendo e fiquei só pensando em começar</button>
       <button class="opt" onclick="answer('q3','testei','Perdi tempo e dinheiro testando receita que não deu certo',this)"><span class="emoji">⏳</span> Perdi tempo testando receita que não deu certo</button>
+      <button class="opt" onclick="answer('q3','desisti','Desisti de vender por não saber por onde começar',this)"><span class="emoji">😔</span> Desisti de vender por não saber por onde começar</button>
+      <button class="opt" onclick="answer('q3','gastei','Já gastei dinheiro com ingredientes que não deu certo',this)"><span class="emoji">💸</span> Já gastei dinheiro com ingredientes que não deu certo</button>
       <button class="opt" onclick="answer('q3','nada','Ainda não vivi isso, mas não quero viver',this)"><span class="emoji">🙅‍♀️</span> Ainda não vivi isso, mas não quero viver</button>
     </div>
+  </section>
+
+  <!-- PROVA SOCIAL GRANDE: identificando o perfil, depoimentos reais em destaque -->
+  <section class="screen proofreveal" id="screen-proof">
+    <div class="micro-spinner"></div>
+    <h3 id="proofTitle">Identificando o seu perfil...</h3>
+    <div class="proof-big"><img id="proofImg" src="assets/depoimentos/depoimento-01.jpg" alt="Depoimento real"></div>
+    <p class="proof-caption" id="proofCaption">Cláudia comprou e já fez 80 encomendas confirmadas 🎄</p>
+    <div class="proof-dots" id="proofDots"></div>
   </section>
 
   <!-- AUTHORITY / MECHANISM BREAK (usando a resposta da Q3) -->
@@ -244,15 +270,10 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
     <div class="break-card">
       <span class="gold-badge">🔑 O segredo por trás disso</span>
       <h2 id="authorityTitle">A diferença não é talento na cozinha</h2>
-      <p id="authorityDesc">É ter a <span class="mechanism-name">Receita de Ouro</span> — a combinação exata de receita já testada, ficha técnica com preço pronto e embalagem que faz o cliente pagar mais. Quando você tem isso em mãos, a insegurança desaparece: você só decora, embala e cobra o preço certo. E o melhor: você não precisa ser confeiteira profissional pra começar a usar.</p>
-      <div class="proof-row">
-        <div class="proof-thumb"><img src="assets/depoimentos/depoimento-01.jpg" alt="Depoimento real: 80 encomendas confirmadas" loading="lazy"></div>
-        <div class="proof-thumb"><img src="assets/depoimentos/depoimento-03.jpg" alt="Depoimento real: 50 encomendas para dezembro" loading="lazy"></div>
-        <div class="proof-thumb"><img src="assets/depoimentos/depoimento-05.jpg" alt="Depoimento real: renda extra incrível" loading="lazy"></div>
-      </div>
+      <p id="authorityDesc">É ter as <span class="mechanism-name">Receitas Virais de Natal</span> — a combinação exata de receita já testada, ficha técnica com preço pronto e embalagem que faz o cliente pagar mais. Quando você tem isso em mãos, a insegurança desaparece: você só decora, embala e cobra o preço certo. E o melhor: você não precisa ser confeiteira profissional pra começar a usar.</p>
     </div>
     <div style="margin-top:20px">
-      <button class="btn btn-primary pulse" onclick="nextFrom('authority')">QUERO MINHA RECEITA DE OURO 🔑</button>
+      <button class="btn btn-primary pulse" onclick="nextFrom('authority')">QUERO MINHAS RECEITAS VIRAIS 🔑</button>
     </div>
   </section>
 
@@ -262,9 +283,11 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
     <h2 class="q-title">Qual seria uma meta de faturamento interessante pra você neste Natal?</h2>
     <p class="promise-line" style="margin:-10px 0 16px">(Isso é a sua meta pessoal — não uma promessa de resultado.)</p>
     <div class="options">
+      <button class="opt" onclick="answer('q4','extra','Só uma rendinha extra, sem meta fixa',this)"><span class="emoji">🎯</span> Só uma rendinha extra, sem meta fixa</button>
       <button class="opt" onclick="answer('q4','500','R$500 a R$800',this)"><span class="emoji">💵</span> R$500 a R$800</button>
       <button class="opt" onclick="answer('q4','800','R$800 a R$2.000',this)"><span class="emoji">💰</span> R$800 a R$2.000</button>
-      <button class="opt" onclick="answer('q4','2000','R$2.000 a R$5.000 ou mais',this)"><span class="emoji">🤑</span> R$2.000 a R$5.000 ou mais</button>
+      <button class="opt" onclick="answer('q4','2000','R$2.000 a R$5.000',this)"><span class="emoji">🤑</span> R$2.000 a R$5.000</button>
+      <button class="opt" onclick="answer('q4','5000plus','R$5.000 ou mais — quero virar profissão',this)"><span class="emoji">🚀</span> R$5.000 ou mais — quero virar profissão</button>
     </div>
   </section>
 
@@ -273,9 +296,11 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
     <div class="q-eyebrow">Última pergunta — 5 de 5</div>
     <h2 class="q-title">Quando você quer começar a vender?</h2>
     <div class="options">
+      <button class="opt" onclick="answer('q5','decidido','Já decidi, só preciso do material certo',this)"><span class="emoji">💪</span> Já decidi, só preciso do material certo</button>
       <button class="opt" onclick="answer('q5','agora','Essa semana',this)"><span class="emoji">🔥</span> Essa semana</button>
       <button class="opt" onclick="answer('q5','mes','Ainda em novembro',this)"><span class="emoji">📅</span> Ainda em novembro</button>
       <button class="opt" onclick="answer('q5','natal','Pra vender agora no Natal',this)"><span class="emoji">🎄</span> Pra vender agora no Natal</button>
+      <button class="opt" onclick="answer('q5','terminar','Assim que eu terminar de ver o material',this)"><span class="emoji">🎁</span> Assim que eu terminar de ver o material</button>
     </div>
   </section>
 
@@ -292,13 +317,13 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
     <span class="green-badge">✅ Vamos recapitular</span>
     <h2 class="q-title" id="recapTitle">Com base no que você respondeu:</h2>
     <div class="recap-list" id="recapList"></div>
-    <button class="btn btn-primary pulse" onclick="nextFrom('recap')">VER MINHA RECEITA DE OURO 🔑</button>
+    <button class="btn btn-primary pulse" onclick="nextFrom('recap')">VER MINHAS RECEITAS VIRAIS 🔑</button>
   </section>
 
   <!-- PRE-PITCH -->
   <section class="screen prepitch" id="screen-prepitch">
     <span class="gold-badge">🎄 Antes e depois</span>
-    <h2 class="q-title">É assim que fica quando você tem a Receita de Ouro certa</h2>
+    <h2 class="q-title">É assim que fica quando você tem as Receitas Virais de Natal certas</h2>
     <div class="antes-depois">
       <div class="ad-card antes">
         <span class="tag">Antes</span>
@@ -312,12 +337,12 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
     <div class="commit-box">
       <p id="commitText">Você está pronta pra transformar isso em encomendas reais esse Natal?</p>
     </div>
-    <button class="btn btn-primary pulse" onclick="nextFrom('prepitch')">SIM, QUERO MINHA RECEITA DE OURO 🔑</button>
+    <button class="btn btn-primary pulse" onclick="nextFrom('prepitch')">SIM, QUERO MINHAS RECEITAS VIRAIS 🔑</button>
   </section>
 
   <!-- RESULT -->
   <section class="screen result" id="screen-result">
-    <span class="result-badge">✅ Sua Receita de Ouro está pronta</span>
+    <span class="result-badge">✅ Suas Receitas Virais de Natal estão prontas</span>
     <h2 id="resultGreeting">Seu perfil é:</h2>
     <div class="profile" id="profileName">—</div>
     <p class="desc" id="profileDesc">—</p>
@@ -330,7 +355,7 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
     </div>
 
     <div class="value-stack">
-      <h3>O que vem na sua Receita de Ouro:</h3>
+      <h3>O que vem nas suas Receitas Virais de Natal:</h3>
       <ul>
         <li>🍪 <span><b>20 receitas</b> já testadas e virais de biscoitos de Natal</span></li>
         <li>📋 <span><b>Fichas técnicas</b> com preço de venda já calculado pra cada receita</span></li>
@@ -366,7 +391,7 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
 <div class="exit-overlay" id="exitOverlay">
   <div class="exit-modal">
     <button class="exit-close" onclick="closeExit()">✕</button>
-    <h3 id="exitTitle">Espera! Sua Receita de Ouro ainda tá aqui</h3>
+    <h3 id="exitTitle">Espera! Suas Receitas Virais de Natal ainda estão aqui</h3>
     <p>É só terminar de responder — leva menos de 1 minuto e você já vê sua oferta personalizada.</p>
     <button class="btn btn-gold" onclick="closeExit()">VOLTAR E VER MINHA RECEITA 🔑</button>
   </div>
@@ -386,7 +411,6 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
     } else {
       topbar.style.display = 'flex';
       document.getElementById('progressBar').style.width = (((idx+1)/qScreens.length)*100) + '%';
-      document.getElementById('stepCount').textContent = (idx+1) + '/' + qScreens.length;
     }
   }
 
@@ -408,12 +432,12 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
     if(idx !== -1){
       topbar.style.display = 'flex';
       document.getElementById('progressBar').style.width = (((idx+1)/qScreens.length)*100) + '%';
-      document.getElementById('stepCount').textContent = (idx+1) + '/' + qScreens.length;
     }
     window.scrollTo(0,0);
     setTimeout(function(){
       showScreen(nextId);
       if(nextId === 'loading'){ runLoading(); }
+      if(nextId === 'proof'){ runProof(); }
     }, 850);
   }
 
@@ -425,10 +449,10 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   // Fluxo principal de perguntas
   var afterAnswer = {
     q1: {next:'name', text:'Perfeito! Preparando sua recomendação pro seu nível...'},
-    q2: {next:'break1', text:'Entendido! Ajustando sua Receita de Ouro...'},
-    q3: {next:'authority', text:'Anotado. Isso vai entrar no seu plano personalizado...'},
+    q2: {next:'break1', text:'Entendido! Ajustando suas Receitas Virais de Natal...'},
+    q3: {next:'proof', text:'Anotado. Buscando quem já passou por isso e conseguiu...'},
     q4: {next:'q5', text:'Calculando seu potencial de faturamento...'},
-    q5: {next:'loading', text:'Fechando sua Receita de Ouro personalizada...'}
+    q5: {next:'loading', text:'Fechando suas Receitas Virais de Natal personalizadas...'}
   };
 
   function answer(qKey, value, label, el){
@@ -445,26 +469,26 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   function submitName(){
     var v = document.getElementById('nameInput').value.trim();
     answers.name = v || 'futura vendedora';
-    fbq('track','Lead',{content_name:'Quiz Receita de Ouro - Iniciado'});
+    fbq('track','Lead',{content_name:'Quiz Receitas Virais de Natal - Iniciado'});
     personalizeCopy();
     transitionTo('q2', 'Oi, ' + capitalize(answers.name) + '! Personalizando sua experiência...');
   }
 
   function personalizeCopy(){
     var n = capitalize(answers.name);
-    document.getElementById('break1Title').textContent = n + ', essa Receita de Ouro não é pra qualquer uma';
+    document.getElementById('break1Title').textContent = n + ', essas Receitas Virais de Natal não são pra qualquer uma';
     document.getElementById('authorityTitle').textContent = n + ', a diferença não é talento na cozinha';
   }
 
   function updateBreak1(){
     var n = capitalize(answers.name);
     var trava = answers.q2 ? answers.q2.label : '';
-    document.getElementById('break1Desc').textContent = 'Você disse que sua maior trava é "' + trava + '" — e é exatamente isso que a Receita de Ouro resolve, pra quem:';
+    document.getElementById('break1Desc').textContent = 'Você disse que sua maior trava é "' + trava + '" — e é exatamente isso que as Receitas Virais de Natal resolvem, pra quem:';
   }
 
   function updateAuthority(){
     var dor = answers.q3 ? answers.q3.label : '';
-    document.getElementById('authorityDesc').innerHTML = 'Você mencionou: "<b>' + dor + '</b>". Isso acontece porque falta a <span class="mechanism-name">Receita de Ouro</span> — a combinação exata de receita já testada, ficha técnica com preço pronto e embalagem que faz o cliente pagar mais. Quando você tem isso em mãos, a insegurança desaparece: você só decora, embala e cobra o preço certo. E o melhor: você não precisa ser confeiteira profissional pra começar a usar.';
+    document.getElementById('authorityDesc').innerHTML = 'Você mencionou: "<b>' + dor + '</b>". Isso acontece porque faltam as <span class="mechanism-name">Receitas Virais de Natal</span> — a combinação exata de receita já testada, ficha técnica com preço pronto e embalagem que faz o cliente pagar mais. Quando você tem isso em mãos, a insegurança desaparece: você só decora, embala e cobra o preço certo. E o melhor: você não precisa ser confeiteira profissional pra começar a usar.';
   }
 
   // Navegação a partir de telas de break/recap/prepitch (botões próprios)
@@ -472,13 +496,45 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
     if(screenId === 'break1'){ transitionTo('q3', 'Avançando pro próximo passo...'); }
     else if(screenId === 'authority'){ transitionTo('q4', 'Liberando as próximas perguntas...'); }
     else if(screenId === 'recap'){ transitionTo('prepitch', 'Preparando sua oferta personalizada...'); }
-    else if(screenId === 'prepitch'){ transitionTo('result', 'Liberando sua Receita de Ouro...'); }
+    else if(screenId === 'prepitch'){ transitionTo('result', 'Liberando suas Receitas Virais de Natal...'); }
   }
 
   function goBack(){
     var current = document.querySelector('.screen.active').id.replace('screen-','');
     var idx = qScreens.indexOf(current);
     if(idx > 0){ showScreen(qScreens[idx-1]); }
+  }
+
+  var proofItems = [
+    {img:'assets/depoimentos/depoimento-01.jpg', caption:'Cláudia comprou e já fez 80 encomendas confirmadas 🎄'},
+    {img:'assets/depoimentos/depoimento-03.jpg', caption:'Patrícia comprou e já tem 50 encomendas pro mês de dezembro 🎄'},
+    {img:'assets/depoimentos/depoimento-05.jpg', caption:'Ana Paula comprou e as encomendas não param de chegar 🎄'},
+    {img:'assets/depoimentos/depoimento-02.jpg', caption:'Renata comprou e já vendeu 20 kits só pra parentes 🎄'}
+  ];
+  function runProof(){
+    var n = capitalize(answers.name);
+    var dor = answers.q3 ? answers.q3.label : '';
+    document.getElementById('proofTitle').textContent = 'Identificando o seu perfil, ' + n + '...';
+    var dots = document.getElementById('proofDots');
+    dots.innerHTML = '';
+    proofItems.forEach(function(){ var d = document.createElement('span'); dots.appendChild(d); });
+    var i = 0;
+    function show(idx){
+      document.getElementById('proofImg').src = proofItems[idx].img;
+      document.getElementById('proofCaption').textContent = proofItems[idx].caption;
+      Array.from(dots.children).forEach(function(d,di){ d.classList.toggle('on', di===idx); });
+    }
+    show(0);
+    var interval = setInterval(function(){
+      i++;
+      if(i >= proofItems.length){
+        clearInterval(interval);
+        updateAuthority();
+        transitionTo('authority', n + ', preparando sua recomendação com base em: "' + dor + '"...');
+        return;
+      }
+      show(i);
+    }, 1600);
   }
 
   function runLoading(){
@@ -598,7 +654,7 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   };
   function goToCheckout(key){
     try{
-      fbq('track', 'CompleteRegistration', {content_name:'Quiz Receita de Ouro - Concluido'});
+      fbq('track', 'CompleteRegistration', {content_name:'Quiz Receitas Virais de Natal - Concluido'});
       fbq('track', 'InitiateCheckout', { content_name: key === 'completa' ? 'Oferta Completa (Quiz)' : 'Oferta Essencial (Quiz)' });
     }catch(e){}
     window.location.href = checkoutLinks[key];
