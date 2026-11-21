@@ -53,6 +53,15 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   .promise-line{font-size:14.5px;color:var(--ink-soft);margin:0 0 16px;font-weight:500}
   .promise-line b{color:var(--green-dark)}
 
+  /* TELA DE ABERTURA SIMPLES: homem ou mulher */
+  .gender-screen{align-items:center;justify-content:center;text-align:center}
+  .gender-screen .q-title{margin-top:4px}
+  .gender-cards{display:flex;gap:16px;margin-top:26px;width:100%}
+  .gender-card{flex:1;display:flex;flex-direction:column;align-items:center;gap:12px;background:#fff;border:2px solid #EADFC3;border-radius:20px;padding:36px 14px;cursor:pointer;font-family:'Poppins',sans-serif;font-weight:800;font-size:17px;color:var(--ink);transition:.15s}
+  .gender-card:hover{border-color:var(--green-vivid);background:#F3FBF6}
+  .gender-card.selected{border-color:var(--green-vivid);background:#E8F6EE}
+  .gender-emoji{font-size:52px}
+
   /* NAME CAPTURE */
   .name-input{width:100%;padding:16px 18px;border-radius:14px;border:2px solid #EADFC3;font-family:'Poppins',sans-serif;font-size:17px;font-weight:600;color:var(--ink);margin-bottom:16px;background:#fff}
   .name-input:focus{outline:none;border-color:var(--green-vivid)}
@@ -177,8 +186,18 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
     <div class="progress-outer"><div class="progress-inner" id="progressBar"></div></div>
   </div>
 
-  <!-- Q1: abre direto com pergunta objetiva + promessa -->
-  <section class="screen active q" id="screen-q1">
+  <!-- ABERTURA SIMPLES: homem ou mulher -->
+  <section class="screen active gender-screen" id="screen-gender">
+    <span class="gold-badge">🔑 Em 1 minuto, suas Receitas Virais de Natal</span>
+    <h2 class="q-title">Pra começar, você é...</h2>
+    <div class="gender-cards">
+      <button class="gender-card" onclick="answerGender('homem','Homem',this)"><span class="gender-emoji">👨</span> Homem</button>
+      <button class="gender-card" onclick="answerGender('mulher','Mulher',this)"><span class="gender-emoji">👩</span> Mulher</button>
+    </div>
+  </section>
+
+  <!-- Q1: pergunta objetiva + promessa -->
+  <section class="screen q" id="screen-q1">
     <span class="gold-badge">🔑 Em 1 minuto, suas Receitas Virais de Natal</span>
     <p class="promise-line">Responda e eu monto sua <b>recomendação personalizada</b> de receita, preço e embalagem pro seu perfil — mesmo que você nunca tenha vendido um biscoito de Natal na vida.</p>
     <h2 class="q-title">Você já é confeiteira profissional ou está começando agora com biscoitos de Natal?</h2>
@@ -466,6 +485,14 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
     }, 220);
   }
 
+  function answerGender(value, label, el){
+    answers.gender = {value:value, label:label};
+    el.classList.add('selected');
+    setTimeout(function(){
+      transitionTo('q1', 'Perfeito! Preparando suas perguntas...');
+    }, 220);
+  }
+
   function submitName(){
     var v = document.getElementById('nameInput').value.trim();
     answers.name = v || 'futura vendedora';
@@ -660,7 +687,6 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
     window.location.href = checkoutLinks[key];
   }
 
-  updateTopbar('q1');
 </script>
 </body>
 </html>
