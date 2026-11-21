@@ -123,20 +123,25 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   .a4-page img{width:100%;height:100%;object-fit:cover}
 
   /* DEPOIMENTOS */
-  .testimonials-section{background:var(--cream-dark);overflow:hidden}
+  .testimonials-section{background:var(--cream-dark)}
   .testi-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--green-vivid);color:#fff;font-weight:800;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;padding:8px 18px;border-radius:999px;margin-bottom:16px}
-  .testi-outer{overflow:hidden;margin:14px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
-  .testi-row{display:flex;gap:20px;width:max-content;animation:scroll-left 58s linear infinite}
-  .testi-row.reverse{animation-direction:reverse;animation-duration:64s}
-  @media (hover:hover) and (pointer:fine){ .testi-outer:hover .testi-row{animation-play-state:paused} }
-  @media (prefers-reduced-motion: reduce){ .testi-row{animation:none} }
-  .testi-card{flex:none;width:260px;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 14px 30px rgba(42,28,20,.18);border:5px solid #fff}
+  .testi-hint{text-align:center;font-size:13.5px;font-weight:700;color:var(--ink-soft);margin:0 0 14px}
+  .testi-nav-wrap{position:relative;margin:0 0 6px}
+  .testi-outer{overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;padding:6px 20px 18px;scrollbar-width:thin;scrollbar-color:var(--green-vivid) transparent}
+  .testi-outer::-webkit-scrollbar{height:7px}
+  .testi-outer::-webkit-scrollbar-thumb{background:var(--green-vivid);border-radius:999px}
+  .testi-row{display:flex;gap:18px;width:max-content}
+  .testi-card{flex:none;width:300px;scroll-snap-align:center;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 14px 30px rgba(42,28,20,.18);border:5px solid #fff}
   .testi-card img{width:100%;display:block}
-  .testi-counter{display:flex;flex-wrap:wrap;justify-content:center;gap:34px;margin:30px 0 6px}
+  .testi-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:#fff;border:2px solid var(--gold-light);box-shadow:0 10px 22px rgba(42,28,20,.22);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;color:var(--ink);cursor:pointer;z-index:5}
+  .testi-arrow.prev{left:-6px}
+  .testi-arrow.next{right:-6px}
+  @media(max-width:780px){ .testi-arrow{display:none} }
+  .testi-counter{display:flex;flex-wrap:wrap;justify-content:center;gap:34px;margin:14px 0 6px}
   .testi-counter .num{font-family:'Playfair Display',serif;font-size:34px;font-weight:800;color:var(--red-dark);display:block;line-height:1}
   .testi-counter .lbl{font-size:13.5px;color:var(--ink-soft);font-weight:600}
   .testi-counter div{text-align:center}
-  @media(max-width:640px){ .testi-card{width:190px} }
+  @media(max-width:640px){ .testi-card{width:248px} }
 
   /* VALUE CARDS */
   .value-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:28px}
@@ -261,60 +266,26 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
     <h2 class="h2">Quem comprou já está <span class="pop-green">vendendo de verdade</span></h2>
   </div>
 
-  <div class="testi-outer">
-    <div class="testi-row">
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-01.jpg" alt="Cláudia: 80 encomendas confirmadas com o material de biscoitos de Natal" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-02.jpg" alt="Renata: vendeu os primeiros 20 kits só para parentes" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-03.jpg" alt="Patrícia: 50 encomendas fechadas para dezembro" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-04.jpg" alt="Ivana: começou a produção dos biscoitos de Natal do material" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-05.jpg" alt="Ana Paula: encomendas não param de chegar, renda extra incrível" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-06.jpg" alt="Natália: 80 encomendas para o Natal graças ao material" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-07.jpg" alt="Marcelo: vendeu 20 kits só para parentes e vai produzir mais" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-08.jpg" alt="Flavia: 50 encomendas para dezembro, maior sucesso da região" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-09.jpg" alt="Cláudia: 80 encomendas, embalagens fazem toda a diferença" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-10.jpg" alt="Renata: primeiros kits vendidos, todos elogiaram sabor e apresentação" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-11.jpg" alt="Patrícia: 50 encomendas para dezembro, biscoitos lindos e deliciosos" loading="lazy"></div>
-      <!-- loop duplicado para continuidade infinita -->
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-01.jpg" alt="Cláudia: 80 encomendas confirmadas com o material de biscoitos de Natal" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-02.jpg" alt="Renata: vendeu os primeiros 20 kits só para parentes" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-03.jpg" alt="Patrícia: 50 encomendas fechadas para dezembro" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-04.jpg" alt="Ivana: começou a produção dos biscoitos de Natal do material" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-05.jpg" alt="Ana Paula: encomendas não param de chegar, renda extra incrível" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-06.jpg" alt="Natália: 80 encomendas para o Natal graças ao material" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-07.jpg" alt="Marcelo: vendeu 20 kits só para parentes e vai produzir mais" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-08.jpg" alt="Flavia: 50 encomendas para dezembro, maior sucesso da região" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-09.jpg" alt="Cláudia: 80 encomendas, embalagens fazem toda a diferença" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-10.jpg" alt="Renata: primeiros kits vendidos, todos elogiaram sabor e apresentação" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-11.jpg" alt="Patrícia: 50 encomendas para dezembro, biscoitos lindos e deliciosos" loading="lazy"></div>
-    </div>
-  </div>
+  <p class="testi-hint">👉 Arraste pra o lado e veja os 11 prints reais, com calma</p>
 
-  <div class="testi-outer" style="margin-top:4px">
-    <div class="testi-row reverse">
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-06.jpg" alt="Natália: 80 encomendas para o Natal graças ao material" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-09.jpg" alt="Cláudia: 80 encomendas, embalagens fazem toda a diferença" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-02.jpg" alt="Renata: vendeu os primeiros 20 kits só para parentes" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-11.jpg" alt="Patrícia: 50 encomendas para dezembro, biscoitos lindos e deliciosos" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-04.jpg" alt="Ivana: começou a produção dos biscoitos de Natal do material" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-07.jpg" alt="Marcelo: vendeu 20 kits só para parentes e vai produzir mais" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-01.jpg" alt="Cláudia: 80 encomendas confirmadas com o material de biscoitos de Natal" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-10.jpg" alt="Renata: primeiros kits vendidos, todos elogiaram sabor e apresentação" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-03.jpg" alt="Patrícia: 50 encomendas fechadas para dezembro" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-08.jpg" alt="Flavia: 50 encomendas para dezembro, maior sucesso da região" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-05.jpg" alt="Ana Paula: encomendas não param de chegar, renda extra incrível" loading="lazy"></div>
-      <!-- loop duplicado para continuidade infinita -->
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-06.jpg" alt="Natália: 80 encomendas para o Natal graças ao material" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-09.jpg" alt="Cláudia: 80 encomendas, embalagens fazem toda a diferença" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-02.jpg" alt="Renata: vendeu os primeiros 20 kits só para parentes" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-11.jpg" alt="Patrícia: 50 encomendas para dezembro, biscoitos lindos e deliciosos" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-04.jpg" alt="Ivana: começou a produção dos biscoitos de Natal do material" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-07.jpg" alt="Marcelo: vendeu 20 kits só para parentes e vai produzir mais" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-01.jpg" alt="Cláudia: 80 encomendas confirmadas com o material de biscoitos de Natal" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-10.jpg" alt="Renata: primeiros kits vendidos, todos elogiaram sabor e apresentação" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-03.jpg" alt="Patrícia: 50 encomendas fechadas para dezembro" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-08.jpg" alt="Flavia: 50 encomendas para dezembro, maior sucesso da região" loading="lazy"></div>
-      <div class="testi-card"><img src="assets/depoimentos/depoimento-05.jpg" alt="Ana Paula: encomendas não param de chegar, renda extra incrível" loading="lazy"></div>
+  <div class="testi-nav-wrap">
+    <button class="testi-arrow prev" onclick="document.getElementById('testiTrack').scrollBy({left:-320,behavior:'smooth'})" aria-label="Depoimento anterior">‹</button>
+    <div class="testi-outer" id="testiTrack">
+      <div class="testi-row">
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-01.jpg" alt="Cláudia: 80 encomendas confirmadas com o material de biscoitos de Natal" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-02.jpg" alt="Renata: vendeu os primeiros 20 kits só para parentes" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-03.jpg" alt="Patrícia: 50 encomendas fechadas para dezembro" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-04.jpg" alt="Ivana: começou a produção dos biscoitos de Natal do material" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-05.jpg" alt="Ana Paula: encomendas não param de chegar, renda extra incrível" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-06.jpg" alt="Natália: 80 encomendas para o Natal graças ao material" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-07.jpg" alt="Marcelo: vendeu 20 kits só para parentes e vai produzir mais" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-08.jpg" alt="Flavia: 50 encomendas para dezembro, maior sucesso da região" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-09.jpg" alt="Cláudia: 80 encomendas, embalagens fazem toda a diferença" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-10.jpg" alt="Renata: primeiros kits vendidos, todos elogiaram sabor e apresentação" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-11.jpg" alt="Patrícia: 50 encomendas para dezembro, biscoitos lindos e deliciosos" loading="lazy"></div>
+      </div>
     </div>
+    <button class="testi-arrow next" onclick="document.getElementById('testiTrack').scrollBy({left:320,behavior:'smooth'})" aria-label="Próximo depoimento">›</button>
   </div>
 
   <div class="container">
