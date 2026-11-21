@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Qual Kit de Biscoitos de Natal combina com você?</title>
+<title>Receita de Ouro — Descubra seu Kit de Biscoitos de Natal</title>
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -28,7 +28,7 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   :root{
     --red:#C41230; --red-dark:#7E0D1E; --red-darker:#5C0A17; --red-light:#E6495C;
     --green:#0E4D30; --green-dark:#0A3822; --green-vivid:#147A43;
-    --gold:#D4AF37; --gold-light:#EFD37B;
+    --gold:#D4AF37; --gold-light:#EFD37B; --gold-deep:#A9811F;
     --cream:#FFF8EA; --cream-dark:#F5E9CC;
     --ink:#2A1C14; --ink-soft:#5B4A3C;
     --radius:18px;
@@ -37,7 +37,7 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   *{box-sizing:border-box}
   body{margin:0;font-family:'Poppins',sans-serif;color:var(--ink);background:var(--cream);line-height:1.5;min-height:100vh}
   h1,h2,h3{font-family:'Playfair Display',serif;margin:0 0 10px}
-  .wrap{max-width:520px;margin:0 auto;padding:22px 20px 60px;min-height:100vh;display:flex;flex-direction:column}
+  .wrap{max-width:520px;margin:0 auto;padding:22px 20px 60px;min-height:100vh;display:flex;flex-direction:column;position:relative}
   .topbar{display:flex;align-items:center;gap:12px;padding:6px 0 18px}
   .progress-outer{flex:1;height:8px;background:#EADFC3;border-radius:999px;overflow:hidden}
   .progress-inner{height:100%;width:0%;background:linear-gradient(90deg,var(--green-vivid),var(--green-dark));border-radius:999px;transition:width .4s ease}
@@ -47,14 +47,21 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   .screen.active{display:flex}
   @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
+  .gold-badge{display:inline-flex;align-self:flex-start;align-items:center;gap:8px;background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--ink);font-weight:800;font-size:12.5px;letter-spacing:.03em;text-transform:uppercase;padding:8px 16px;border-radius:999px;margin-bottom:16px;box-shadow:0 8px 18px rgba(169,129,31,.35)}
+  .green-badge{display:inline-flex;align-self:flex-start;align-items:center;gap:8px;background:var(--green-vivid);color:#fff;font-weight:800;font-size:12.5px;letter-spacing:.03em;text-transform:uppercase;padding:8px 16px;border-radius:999px;margin-bottom:16px}
+
   /* INTRO */
-  .intro-badge{display:inline-flex;align-self:flex-start;align-items:center;gap:8px;background:var(--green-vivid);color:#fff;font-weight:800;font-size:12.5px;letter-spacing:.03em;text-transform:uppercase;padding:8px 16px;border-radius:999px;margin-bottom:18px}
   .intro h1{font-size:clamp(26px,7vw,34px);color:var(--red-dark);line-height:1.2}
+  .intro .sparkle{color:var(--gold-deep)}
   .intro p{color:var(--ink-soft);font-size:16px;margin-top:6px}
   .intro-img{width:100%;border-radius:16px;margin:20px 0;box-shadow:var(--shadow)}
   .intro-points{list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:10px}
   .intro-points li{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:var(--ink)}
   .intro-points li b{color:var(--green-dark)}
+
+  /* NAME CAPTURE */
+  .name-input{width:100%;padding:16px 18px;border-radius:14px;border:2px solid #EADFC3;font-family:'Poppins',sans-serif;font-size:17px;font-weight:600;color:var(--ink);margin-bottom:16px;background:#fff}
+  .name-input:focus{outline:none;border-color:var(--green-vivid)}
 
   /* QUESTIONS */
   .q-eyebrow{font-size:13px;font-weight:700;color:var(--green-vivid);text-transform:uppercase;letter-spacing:.03em;margin-bottom:6px}
@@ -65,6 +72,23 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   .opt.selected{border-color:var(--green-vivid);background:#E8F6EE}
   .opt .emoji{font-size:22px}
 
+  /* BREAK (emotional / authority) */
+  .break{justify-content:center}
+  .break-card{background:#fff;border-radius:20px;box-shadow:var(--shadow);padding:26px 22px;border:2px solid var(--gold-light);position:relative;overflow:hidden}
+  .break-card::before{content:"✨";position:absolute;top:-6px;right:10px;font-size:50px;opacity:.14}
+  .break h2{color:var(--red-dark);font-size:clamp(21px,6vw,25px);line-height:1.3}
+  .break p{color:var(--ink-soft);font-size:15px;margin:10px 0}
+  .break ul{list-style:none;padding:0;margin:14px 0;display:flex;flex-direction:column;gap:8px}
+  .break ul li{display:flex;gap:8px;font-size:14.5px;color:var(--ink);background:var(--cream-dark);border-radius:10px;padding:10px 12px}
+  .mechanism-name{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold-deep);font-size:21px;display:block;margin:6px 0}
+  .proof-row{display:flex;gap:10px;margin-top:18px}
+  .proof-thumb{flex:1;border-radius:10px;overflow:hidden;box-shadow:0 8px 16px rgba(42,28,20,.18);border:3px solid #fff}
+  .proof-thumb img{width:100%;display:block}
+  .mini-stats{display:flex;gap:14px;margin-top:16px;justify-content:center}
+  .mini-stats div{text-align:center}
+  .mini-stats .n{font-family:'Playfair Display',serif;font-weight:800;color:var(--red-dark);font-size:22px;display:block}
+  .mini-stats .l{font-size:11px;color:var(--ink-soft);font-weight:600}
+
   /* LOADING */
   .loading{align-items:center;justify-content:center;text-align:center;gap:18px}
   .spinner{width:58px;height:58px;border-radius:50%;border:6px solid #EADFC3;border-top-color:var(--green-vivid);animation:spin 1s linear infinite}
@@ -74,15 +98,43 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   .loading-bar{width:100%;max-width:280px;height:8px;background:#EADFC3;border-radius:999px;overflow:hidden}
   .loading-bar i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--green-vivid),var(--gold));border-radius:999px}
 
+  /* RECAP */
+  .recap-list{display:flex;flex-direction:column;gap:10px;margin:16px 0 24px}
+  .recap-item{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid #EADFC3;border-radius:12px;padding:12px 14px;font-size:14.5px}
+  .recap-item .check{color:var(--green-vivid);font-weight:900;font-size:17px}
+  .recap-item b{color:var(--ink)}
+
+  /* PRE-PITCH */
+  .antes-depois{display:flex;gap:12px;margin:18px 0}
+  .ad-card{flex:1;border-radius:14px;padding:16px 14px;text-align:center}
+  .ad-card.antes{background:#F7E8E6;border:2px solid var(--red-light)}
+  .ad-card.depois{background:#E8F6EE;border:2px solid var(--green-vivid)}
+  .ad-card .tag{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.03em}
+  .ad-card.antes .tag{color:var(--red-dark)}
+  .ad-card.depois .tag{color:var(--green-dark)}
+  .ad-card p{font-size:13.5px;margin:8px 0 0;color:var(--ink)}
+  .commit-box{background:var(--cream-dark);border-radius:14px;padding:16px 18px;text-align:center;margin-bottom:20px}
+  .commit-box p{font-size:15.5px;font-weight:700;color:var(--ink);margin:0}
+
   /* RESULT */
   .result-badge{align-self:center;background:var(--gold-light);color:var(--ink);font-weight:800;font-size:12.5px;text-transform:uppercase;letter-spacing:.03em;padding:7px 16px;border-radius:999px;margin-bottom:14px}
   .result h2{text-align:center;color:var(--red-dark);font-size:clamp(24px,7vw,30px);line-height:1.25}
   .result .profile{text-align:center;color:var(--green-vivid);font-family:'Playfair Display',serif;font-style:italic;font-size:19px;margin-bottom:14px}
   .result p.desc{text-align:center;color:var(--ink-soft);font-size:15.5px;margin-bottom:18px}
-  .result-img{width:100%;border-radius:16px;box-shadow:var(--shadow);margin-bottom:20px}
-  .faturamento-box{background:#fff;border:2px dashed var(--gold);border-radius:14px;padding:16px 18px;text-align:center;margin-bottom:22px}
-  .faturamento-box .num{font-family:'Playfair Display',serif;font-size:30px;font-weight:800;color:var(--red-dark);display:block}
-  .faturamento-box .lbl{font-size:13px;color:var(--ink-soft);font-weight:600}
+  .result-img{width:100%;border-radius:16px;box-shadow:var(--shadow);margin-bottom:18px}
+
+  .urgency-box{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--red-darker);color:#fff;border-radius:12px;padding:12px 14px;margin-bottom:18px;font-weight:700;font-size:13.5px;text-align:center}
+  .urgency-box .timer{font-family:'Playfair Display',serif;font-size:18px;letter-spacing:.03em}
+
+  .value-stack{background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:18px 20px;margin-bottom:16px;border:2px solid var(--gold-light)}
+  .value-stack h3{font-size:16px;color:var(--ink);margin-bottom:10px}
+  .value-stack ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+  .value-stack li{display:flex;gap:8px;font-size:14px;color:var(--ink-soft)}
+  .value-stack li b{color:var(--ink)}
+
+  .testi-strip{display:flex;gap:8px;overflow-x:auto;margin-bottom:18px;padding-bottom:4px}
+  .testi-strip img{height:110px;border-radius:10px;box-shadow:0 8px 16px rgba(42,28,20,.18);border:3px solid #fff;flex:none}
+
   .offer-card{background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:20px;margin-bottom:14px;border:2px solid var(--gold-light)}
   .offer-card .tag{display:inline-block;background:var(--red);color:#fff;font-size:11.5px;font-weight:800;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin-bottom:10px}
   .offer-card h3{font-size:19px;color:var(--ink)}
@@ -92,10 +144,19 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
 
   .btn{display:inline-flex;align-items:center;justify-content:center;width:100%;padding:16px 20px;border-radius:999px;font-weight:800;font-size:15.5px;text-decoration:none;border:none;cursor:pointer;font-family:'Poppins',sans-serif}
   .btn-primary{background:linear-gradient(135deg,var(--red),var(--red-darker));color:#fff;box-shadow:0 14px 30px rgba(196,18,48,.45)}
+  .btn-gold{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--ink);box-shadow:0 12px 28px rgba(212,175,55,.4)}
   .btn-ghost{background:#fff;color:var(--ink);border:2px solid #EADFC3;margin-top:10px}
   .pulse{animation:pulse 1.8s infinite}
   @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
   .guarantee-row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:16px;font-size:12.5px;color:var(--ink-soft);font-weight:600}
+
+  /* EXIT RECOVERY MODAL */
+  .exit-overlay{position:fixed;inset:0;background:rgba(42,28,20,.55);display:none;align-items:center;justify-content:center;padding:20px;z-index:300}
+  .exit-overlay.active{display:flex}
+  .exit-modal{background:var(--cream);border-radius:18px;max-width:380px;width:100%;padding:26px 22px;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.35);position:relative}
+  .exit-modal h3{color:var(--red-dark);font-size:21px;margin-bottom:8px}
+  .exit-modal p{color:var(--ink-soft);font-size:14.5px;margin-bottom:18px}
+  .exit-close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:20px;color:var(--ink-soft);cursor:pointer}
 </style>
 </head>
 <body>
@@ -109,82 +170,196 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
 
   <!-- INTRO -->
   <section class="screen active intro" id="screen-intro">
-    <span class="intro-badge">🎄 Quiz rápido — 30 segundos</span>
-    <h1>Descubra qual Kit de Biscoitos de Natal combina com seu perfil</h1>
-    <p>Responda 4 perguntas rápidas e veja uma recomendação personalizada — incluindo quanto você pode faturar até o Natal com o seu perfil.</p>
+    <span class="gold-badge">🔑 Quiz da Receita de Ouro — 1 minuto</span>
+    <h1>Descubra sua <span class="sparkle">Receita de Ouro</span>: o kit certo pra vender biscoitos de Natal com confiança</h1>
+    <p>Responda algumas perguntas rápidas e descubra exatamente qual receita, preço e embalagem combinam com o seu perfil — e quanto você pode faturar até o Natal.</p>
     <ul class="intro-points">
-      <li>🍪 <span><b>100% personalizado</b> pro seu tempo e sua experiência</span></li>
+      <li>🔑 <span><b>Receita de Ouro personalizada</b> pro seu tempo e sua experiência</span></li>
       <li>⏱️ <span>Leva menos de <b>1 minuto</b> pra responder</span></li>
       <li>🎁 <span>No final, seu <b>plano de ação pra vender no Natal</b></span></li>
     </ul>
-    <button class="btn btn-primary pulse" onclick="startQuiz()">COMEÇAR O QUIZ 🎄</button>
+    <button class="btn btn-primary pulse" onclick="goTo('name')">DESCOBRIR MINHA RECEITA DE OURO 🔑</button>
+  </section>
+
+  <!-- NAME -->
+  <section class="screen" id="screen-name">
+    <div class="q-eyebrow">Antes de começar</div>
+    <h2 class="q-title">Pra eu te chamar certo no seu resultado, qual seu primeiro nome?</h2>
+    <input type="text" class="name-input" id="nameInput" placeholder="Digite seu primeiro nome" maxlength="30">
+    <button class="btn btn-primary pulse" onclick="submitName()">CONTINUAR 🎄</button>
   </section>
 
   <!-- Q1 -->
   <section class="screen q" id="screen-q1">
-    <div class="q-eyebrow">Pergunta 1 de 4</div>
+    <div class="q-eyebrow">Pergunta 1</div>
     <h2 class="q-title">Você já vende biscoitos decorados?</h2>
     <div class="options">
-      <button class="opt" onclick="answer(1,'iniciante',this)"><span class="emoji">🌱</span> Nunca vendi, mas quero começar</button>
-      <button class="opt" onclick="answer(1,'crescimento',this)"><span class="emoji">📈</span> Já vendo informalmente pra amigos e família</button>
-      <button class="opt" onclick="answer(1,'profissional',this)"><span class="emoji">🚀</span> Já tenho encomendas e quero profissionalizar</button>
+      <button class="opt" onclick="answer('q1','iniciante','Nunca vendi, mas quero começar',this)"><span class="emoji">🌱</span> Nunca vendi, mas quero começar</button>
+      <button class="opt" onclick="answer('q1','crescimento','Já vendo informalmente pra amigos e família',this)"><span class="emoji">📈</span> Já vendo informalmente pra amigos e família</button>
+      <button class="opt" onclick="answer('q1','profissional','Já tenho encomendas e quero profissionalizar',this)"><span class="emoji">🚀</span> Já tenho encomendas e quero profissionalizar</button>
     </div>
   </section>
 
   <!-- Q2 -->
   <section class="screen q" id="screen-q2">
-    <div class="q-eyebrow">Pergunta 2 de 4</div>
+    <div class="q-eyebrow">Pergunta 2</div>
     <h2 class="q-title">Quanto tempo você tem disponível por semana pra produzir?</h2>
     <div class="options">
-      <button class="opt" onclick="answer(2,'pouco',this)"><span class="emoji">🕒</span> Só nos fins de semana</button>
-      <button class="opt" onclick="answer(2,'medio',this)"><span class="emoji">⏳</span> Um pouquinho todo dia</button>
-      <button class="opt" onclick="answer(2,'muito',this)"><span class="emoji">⏱️</span> Bastante tempo livre</button>
+      <button class="opt" onclick="answer('q2','pouco','Só nos fins de semana',this)"><span class="emoji">🕒</span> Só nos fins de semana</button>
+      <button class="opt" onclick="answer('q2','medio','Um pouquinho todo dia',this)"><span class="emoji">⏳</span> Um pouquinho todo dia</button>
+      <button class="opt" onclick="answer('q2','muito','Bastante tempo livre',this)"><span class="emoji">⏱️</span> Bastante tempo livre</button>
     </div>
   </section>
 
-  <!-- Q3 -->
+  <!-- BREAK 1: identificação + nome chiclete teaser -->
+  <section class="screen break" id="screen-break1">
+    <div class="break-card">
+      <span class="green-badge">💬 Uma pausa rápida</span>
+      <h2 id="break1Title">Essa Receita de Ouro não é pra qualquer uma</h2>
+      <p>É pra quem se encaixa em pelo menos uma dessas situações:</p>
+      <ul>
+        <li>🙋‍♀️ Já vende, mas sente que cobra barato demais pelo que entrega</li>
+        <li>😰 Quer começar, mas trava no "não sei por onde"</li>
+        <li>💸 Já perdeu dinheiro testando receita que não deu certo</li>
+      </ul>
+      <p>Se você se identificou com pelo menos uma, <b>fica até o final</b> — o que vem a seguir pode mudar como você vai vender esse Natal.</p>
+      <div class="mini-stats">
+        <div><span class="n">500+</span><span class="l">mulheres usando</span></div>
+        <div><span class="n">80</span><span class="l">encomendas no melhor relato</span></div>
+      </div>
+    </div>
+    <div style="margin-top:20px">
+      <button class="btn btn-primary pulse" onclick="goTo('q3')">QUERO CONTINUAR 🔑</button>
+    </div>
+  </section>
+
+  <!-- Q3 (problema) -->
   <section class="screen q" id="screen-q3">
-    <div class="q-eyebrow">Pergunta 3 de 4</div>
+    <div class="q-eyebrow">Pergunta 3</div>
     <h2 class="q-title">Qual sua maior trava hoje?</h2>
     <div class="options">
-      <button class="opt" onclick="answer(3,'preco',this)"><span class="emoji">💰</span> Não sei que preço cobrar</button>
-      <button class="opt" onclick="answer(3,'receita',this)"><span class="emoji">📖</span> Não tenho receitas testadas</button>
-      <button class="opt" onclick="answer(3,'embalagem',this)"><span class="emoji">🎀</span> Não sei embalar e apresentar bonito</button>
-      <button class="opt" onclick="answer(3,'venda',this)"><span class="emoji">📣</span> Não sei como divulgar e vender</button>
+      <button class="opt" onclick="answer('q3','preco','Não sei que preço cobrar',this)"><span class="emoji">💰</span> Não sei que preço cobrar</button>
+      <button class="opt" onclick="answer('q3','receita','Não tenho receitas testadas',this)"><span class="emoji">📖</span> Não tenho receitas testadas</button>
+      <button class="opt" onclick="answer('q3','embalagem','Não sei embalar e apresentar bonito',this)"><span class="emoji">🎀</span> Não sei embalar e apresentar bonito</button>
+      <button class="opt" onclick="answer('q3','venda','Não sei como divulgar e vender',this)"><span class="emoji">📣</span> Não sei como divulgar e vender</button>
     </div>
   </section>
 
-  <!-- Q4 -->
+  <!-- Q4 (implicação / dor) -->
   <section class="screen q" id="screen-q4">
-    <div class="q-eyebrow">Pergunta 4 de 4</div>
+    <div class="q-eyebrow">Pergunta 4</div>
+    <h2 class="q-title">Pensando em Natais anteriores, o que mais pesou?</h2>
+    <div class="options">
+      <button class="opt" onclick="answer('q4','recusei','Recusei pedido com medo de cobrar errado',this)"><span class="emoji">😣</span> Recusei pedido com medo de cobrar errado</button>
+      <button class="opt" onclick="answer('q4','vi_outras','Vi outras pessoas vendendo e fiquei só pensando em começar',this)"><span class="emoji">👀</span> Vi outras vendendo e fiquei só pensando em começar</button>
+      <button class="opt" onclick="answer('q4','testei','Perdi tempo e dinheiro testando receita que não deu certo',this)"><span class="emoji">⏳</span> Perdi tempo testando receita que não deu certo</button>
+      <button class="opt" onclick="answer('q4','nada','Ainda não vivi isso, mas não quero viver',this)"><span class="emoji">🙅‍♀️</span> Ainda não vivi isso, mas não quero viver</button>
+    </div>
+  </section>
+
+  <!-- AUTHORITY / MECHANISM BREAK -->
+  <section class="screen break" id="screen-authority">
+    <div class="break-card">
+      <span class="gold-badge">🔑 O segredo por trás disso</span>
+      <h2 id="authorityTitle">A diferença não é talento na cozinha</h2>
+      <p id="authorityDesc">É ter a <span class="mechanism-name">Receita de Ouro</span> — a combinação exata de receita já testada, ficha técnica com preço pronto e embalagem que faz o cliente pagar mais. Quando você tem isso em mãos, a insegurança desaparece: você só decora, embala e cobra o preço certo.</p>
+      <div class="proof-row">
+        <div class="proof-thumb"><img src="assets/depoimentos/depoimento-01.jpg" alt="Depoimento real: 80 encomendas confirmadas" loading="lazy"></div>
+        <div class="proof-thumb"><img src="assets/depoimentos/depoimento-03.jpg" alt="Depoimento real: 50 encomendas para dezembro" loading="lazy"></div>
+        <div class="proof-thumb"><img src="assets/depoimentos/depoimento-05.jpg" alt="Depoimento real: renda extra incrível" loading="lazy"></div>
+      </div>
+    </div>
+    <div style="margin-top:20px">
+      <button class="btn btn-primary pulse" onclick="goTo('q5')">QUERO MINHA RECEITA DE OURO 🔑</button>
+    </div>
+  </section>
+
+  <!-- Q5 (desejo) -->
+  <section class="screen q" id="screen-q5">
+    <div class="q-eyebrow">Pergunta 5</div>
+    <h2 class="q-title">Quanto você gostaria de faturar até o Natal?</h2>
+    <div class="options">
+      <button class="opt" onclick="answer('q5','500','R$500 a R$800',this)"><span class="emoji">💵</span> R$500 a R$800</button>
+      <button class="opt" onclick="answer('q5','800','R$800 a R$2.000',this)"><span class="emoji">💰</span> R$800 a R$2.000</button>
+      <button class="opt" onclick="answer('q5','2000','R$2.000 a R$5.000 ou mais',this)"><span class="emoji">🤑</span> R$2.000 a R$5.000 ou mais</button>
+    </div>
+  </section>
+
+  <!-- Q6 (urgência) -->
+  <section class="screen q" id="screen-q6">
+    <div class="q-eyebrow">Última pergunta</div>
     <h2 class="q-title">Quando você quer começar a vender?</h2>
     <div class="options">
-      <button class="opt" onclick="answer(4,'agora',this)"><span class="emoji">🔥</span> Essa semana</button>
-      <button class="opt" onclick="answer(4,'mes',this)"><span class="emoji">📅</span> Ainda em novembro</button>
-      <button class="opt" onclick="answer(4,'natal',this)"><span class="emoji">🎄</span> Pra vender agora no Natal</button>
+      <button class="opt" onclick="answer('q6','agora','Essa semana',this)"><span class="emoji">🔥</span> Essa semana</button>
+      <button class="opt" onclick="answer('q6','mes','Ainda em novembro',this)"><span class="emoji">📅</span> Ainda em novembro</button>
+      <button class="opt" onclick="answer('q6','natal','Pra vender agora no Natal',this)"><span class="emoji">🎄</span> Pra vender agora no Natal</button>
     </div>
   </section>
 
   <!-- LOADING -->
   <section class="screen loading" id="screen-loading">
     <div class="spinner"></div>
-    <h3>Calculando seu perfil...</h3>
-    <p id="loadingText">Analisando suas respostas</p>
+    <h3>Montando sua Receita de Ouro...</h3>
+    <p id="loadingText">Cruzando seu perfil com +500 casos reais</p>
     <div class="loading-bar"><i id="loadingFill"></i></div>
+  </section>
+
+  <!-- RECAP -->
+  <section class="screen recap" id="screen-recap">
+    <span class="green-badge">✅ Vamos recapitular</span>
+    <h2 class="q-title" id="recapTitle">Com base no que você respondeu:</h2>
+    <div class="recap-list" id="recapList"></div>
+    <button class="btn btn-primary pulse" onclick="goTo('prepitch')">VER MINHA RECEITA DE OURO 🔑</button>
+  </section>
+
+  <!-- PRE-PITCH -->
+  <section class="screen prepitch" id="screen-prepitch">
+    <span class="gold-badge">🎄 Antes e depois</span>
+    <h2 class="q-title">É assim que fica quando você tem a Receita de Ouro certa</h2>
+    <div class="antes-depois">
+      <div class="ad-card antes">
+        <span class="tag">Antes</span>
+        <p>Insegura, sem saber o preço certo, vendendo só pra poucos amigos</p>
+      </div>
+      <div class="ad-card depois">
+        <span class="tag">Depois</span>
+        <p>Encomendas confirmadas, preço certo e embalagem que vende sozinha</p>
+      </div>
+    </div>
+    <div class="commit-box">
+      <p id="commitText">Você está pronta pra transformar isso em encomendas reais esse Natal?</p>
+    </div>
+    <button class="btn btn-primary pulse" onclick="goTo('result')">SIM, QUERO MINHA RECEITA DE OURO 🔑</button>
   </section>
 
   <!-- RESULT -->
   <section class="screen result" id="screen-result">
-    <span class="result-badge">✅ Resultado pronto</span>
-    <h2>Seu perfil é:</h2>
+    <span class="result-badge">✅ Sua Receita de Ouro está pronta</span>
+    <h2 id="resultGreeting">Seu perfil é:</h2>
     <div class="profile" id="profileName">—</div>
     <p class="desc" id="profileDesc">—</p>
 
     <img class="result-img" src="assets/banner_oferta_completa.png" alt="Oferta Completa — Renda Extra com Biscoitos de Natal" loading="lazy">
 
-    <div class="faturamento-box">
-      <span class="num" id="faturamentoEstimado">R$800 a R$2.000</span>
-      <span class="lbl">potencial estimado pra você faturar até o Natal com esse perfil</span>
+    <div class="urgency-box">
+      <span>⏰ Preço de lançamento válido por mais:</span>
+      <span class="timer" id="countdown">19:59</span>
+    </div>
+
+    <div class="value-stack">
+      <h3>O que vem na sua Receita de Ouro:</h3>
+      <ul>
+        <li>🍪 <span><b>20 receitas</b> já testadas e virais de biscoitos de Natal</span></li>
+        <li>📋 <span><b>Fichas técnicas</b> com preço de venda já calculado pra cada receita</span></li>
+        <li>🎀 <span><b>Guia de embalagem lucrativa</b> pra vender mais caro e com mais confiança</span></li>
+      </ul>
+    </div>
+
+    <div class="testi-strip" id="testiStrip">
+      <img src="assets/depoimentos/depoimento-01.jpg" alt="Depoimento real" loading="lazy">
+      <img src="assets/depoimentos/depoimento-02.jpg" alt="Depoimento real" loading="lazy">
+      <img src="assets/depoimentos/depoimento-06.jpg" alt="Depoimento real" loading="lazy">
+      <img src="assets/depoimentos/depoimento-09.jpg" alt="Depoimento real" loading="lazy">
     </div>
 
     <div class="offer-card">
@@ -204,16 +379,31 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
 
 </div>
 
+<!-- EXIT RECOVERY -->
+<div class="exit-overlay" id="exitOverlay">
+  <div class="exit-modal">
+    <button class="exit-close" onclick="closeExit()">✕</button>
+    <h3 id="exitTitle">Espera! Sua Receita de Ouro ainda tá aqui</h3>
+    <p>É só terminar de responder — leva menos de 1 minuto e você já vê sua oferta personalizada.</p>
+    <button class="btn btn-gold" onclick="closeExit()">VOLTAR E VER MINHA RECEITA 🔑</button>
+  </div>
+</div>
+
 <script>
   var answers = {};
-  var order = ['intro','q1','q2','q3','q4','loading','result'];
-  var qScreens = ['q1','q2','q3','q4'];
+  var qScreens = ['q1','q2','q3','q4','q5','q6'];
+  var screenHistory = ['intro'];
+
+  function goTo(id){
+    screenHistory.push(id);
+    showScreen(id);
+  }
 
   function showScreen(id){
     document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
     document.getElementById('screen-'+id).classList.add('active');
     var topbar = document.getElementById('topbar');
-    if(id === 'intro' || id === 'loading' || id === 'result'){
+    if(qScreens.indexOf(id) === -1){
       topbar.style.display = 'none';
     } else {
       topbar.style.display = 'flex';
@@ -224,20 +414,34 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
     window.scrollTo(0,0);
   }
 
-  function startQuiz(){
-    fbq('track','Lead',{content_name:'Quiz Biscoitos - Iniciado'});
-    showScreen('q1');
+  function submitName(){
+    var v = document.getElementById('nameInput').value.trim();
+    answers.name = v || 'futura vendedora';
+    fbq('track','Lead',{content_name:'Quiz Receita de Ouro - Iniciado'});
+    personalizeCopy();
+    goTo('q1');
   }
 
-  function answer(qNum, value, el){
-    answers['q'+qNum] = value;
+  function personalizeCopy(){
+    var n = capitalize(answers.name);
+    document.getElementById('break1Title').textContent = n + ', essa Receita de Ouro não é pra qualquer uma';
+    document.getElementById('authorityTitle').textContent = n + ', a diferença não é talento na cozinha';
+  }
+
+  function capitalize(s){
+    if(!s) return s;
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+
+  function answer(qKey, value, label, el){
+    answers[qKey] = {value:value, label:label};
     el.classList.add('selected');
+    var next = {
+      q1:'q2', q2:'break1', q3:'q4', q4:'authority', q5:'q6', q6:'loading'
+    };
     setTimeout(function(){
-      if(qNum < 4){
-        showScreen('q'+(qNum+1));
-      } else {
-        runLoading();
-      }
+      goTo(next[qKey]);
+      if(next[qKey] === 'loading'){ runLoading(); }
     }, 220);
   }
 
@@ -245,51 +449,107 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
     var current = document.querySelector('.screen.active').id.replace('screen-','');
     var idx = qScreens.indexOf(current);
     if(idx > 0){ showScreen(qScreens[idx-1]); }
-    else { showScreen('intro'); }
+    else { showScreen('name'); }
   }
 
   function runLoading(){
-    showScreen('loading');
-    var msgs = ['Analisando suas respostas...','Calculando seu potencial de faturamento...','Montando sua recomendação...'];
+    var msgs = ['Cruzando seu perfil com +500 casos reais...','Calculando seu potencial de faturamento...','Preparando seu plano pra esse Natal...'];
     var i = 0;
     var txt = document.getElementById('loadingText');
     var fill = document.getElementById('loadingFill');
     var interval = setInterval(function(){
       i++;
       if(i < msgs.length){ txt.textContent = msgs[i]; }
-    }, 500);
-    fill.style.transition = 'width 1.6s linear';
+    }, 550);
+    fill.style.transition = 'width 1.8s linear';
     requestAnimationFrame(function(){ fill.style.width = '100%'; });
     setTimeout(function(){
       clearInterval(interval);
+      buildRecap();
       buildResult();
-      fbq('track','CompleteRegistration',{content_name:'Quiz Biscoitos - Concluido'});
-      showScreen('result');
-    }, 1700);
+      goTo('recap');
+    }, 1900);
   }
 
+  function buildRecap(){
+    var n = capitalize(answers.name);
+    document.getElementById('recapTitle').textContent = 'Com base no que você respondeu, ' + n + ':';
+    var items = [];
+    if(answers.q1) items.push('Perfil: <b>' + answers.q1.label + '</b>');
+    if(answers.q3) items.push('Sua maior trava: <b>' + answers.q3.label + '</b>');
+    if(answers.q4) items.push('O que mais pesou: <b>' + answers.q4.label + '</b>');
+    if(answers.q5) items.push('Meta de faturamento: <b>' + answers.q5.label + '</b>');
+    if(answers.q6) items.push('Quando quer começar: <b>' + answers.q6.label + '</b>');
+    var html = '';
+    items.forEach(function(it){
+      html += '<div class="recap-item"><span class="check">✓</span><span>' + it + '</span></div>';
+    });
+    document.getElementById('recapList').innerHTML = html;
+    document.getElementById('commitText').textContent = n + ', você está pronta pra transformar isso em encomendas reais esse Natal?';
+  }
+
+  var profiles = {
+    iniciante: {
+      name: 'A Iniciante Determinada',
+      desc: 'Você está começando do zero — e é exatamente por isso que o passo a passo completo (receitas já testadas, ficha técnica e preço pronto) vai te poupar meses de tentativa e erro.'
+    },
+    crescimento: {
+      name: 'A Vendedora em Crescimento',
+      desc: 'Você já vende informalmente e sente que pode ir além. O que falta não é esforço — é profissionalizar embalagem, preço e apresentação pra vender mais caro e com mais confiança.'
+    },
+    profissional: {
+      name: 'A Futura Profissional',
+      desc: 'Você já tem demanda real — agora é hora de estruturar produção, precificação e embalagem pra atender mais encomendas sem perder qualidade nem lucro.'
+    }
+  };
+
   function buildResult(){
-    var profiles = {
-      iniciante: {
-        name: 'A Iniciante Determinada',
-        desc: 'Você está começando do zero — e é exatamente por isso que o passo a passo completo (receitas já testadas, ficha técnica e preço pronto) vai te poupar meses de tentativa e erro.',
-        faturamento: 'R$500 a R$1.200'
-      },
-      crescimento: {
-        name: 'A Vendedora em Crescimento',
-        desc: 'Você já vende informalmente e sente que pode ir além. O que falta não é esforço — é profissionalizar embalagem, preço e apresentação pra vender mais caro e com mais confiança.',
-        faturamento: 'R$800 a R$2.000'
-      },
-      profissional: {
-        name: 'A Futura Profissional',
-        desc: 'Você já tem demanda real — agora é hora de estruturar produção, precificação e embalagem pra atender mais encomendas sem perder qualidade nem lucro.',
-        faturamento: 'R$1.500 a R$5.000'
-      }
-    };
-    var p = profiles[answers.q1] || profiles.crescimento;
+    var n = capitalize(answers.name);
+    var p = profiles[answers.q1 ? answers.q1.value : 'crescimento'] || profiles.crescimento;
+    document.getElementById('resultGreeting').textContent = n + ', seu perfil é:';
     document.getElementById('profileName').textContent = p.name;
     document.getElementById('profileDesc').textContent = p.desc;
-    document.getElementById('faturamentoEstimado').textContent = p.faturamento;
+  }
+
+  // Countdown — sessão real de 20 minutos, não uma data fixa que expira
+  (function initCountdown(){
+    var KEY = 'quizCountdownDeadline';
+    var deadline = sessionStorage.getItem(KEY);
+    if(!deadline){
+      deadline = Date.now() + 20*60*1000;
+      sessionStorage.setItem(KEY, deadline);
+    } else {
+      deadline = parseInt(deadline, 10);
+    }
+    function tick(){
+      var el = document.getElementById('countdown');
+      if(!el) return;
+      var ms = deadline - Date.now();
+      if(ms < 0) ms = 0;
+      var mm = Math.floor(ms/60000);
+      var ss = Math.floor((ms%60000)/1000);
+      el.textContent = (mm<10?'0':'')+mm + ':' + (ss<10?'0':'')+ss;
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+
+  // Exit-intent recovery (desktop only, uma vez por sessão, só durante o quiz)
+  (function initExitIntent(){
+    var shown = false;
+    document.addEventListener('mouseleave', function(e){
+      if(shown) return;
+      if(e.clientY > 0) return;
+      var current = document.querySelector('.screen.active');
+      if(!current) return;
+      var id = current.id.replace('screen-','');
+      if(id === 'result' || id === 'intro') return;
+      shown = true;
+      document.getElementById('exitOverlay').classList.add('active');
+    });
+  })();
+  function closeExit(){
+    document.getElementById('exitOverlay').classList.remove('active');
   }
 
   var checkoutLinks = {
@@ -298,6 +558,7 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   };
   function goToCheckout(key){
     try{
+      fbq('track', 'CompleteRegistration', {content_name:'Quiz Receita de Ouro - Concluido'});
       fbq('track', 'InitiateCheckout', { content_name: key === 'completa' ? 'Oferta Completa (Quiz)' : 'Oferta Essencial (Quiz)' });
     }catch(e){}
     window.location.href = checkoutLinks[key];
