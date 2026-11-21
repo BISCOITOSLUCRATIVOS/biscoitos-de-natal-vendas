@@ -47,17 +47,11 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   .screen.active{display:flex}
   @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
-  .gold-badge{display:inline-flex;align-self:flex-start;align-items:center;gap:8px;background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--ink);font-weight:800;font-size:12.5px;letter-spacing:.03em;text-transform:uppercase;padding:8px 16px;border-radius:999px;margin-bottom:16px;box-shadow:0 8px 18px rgba(169,129,31,.35)}
+  .gold-badge{display:inline-flex;align-self:flex-start;align-items:center;gap:8px;background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--ink);font-weight:800;font-size:12.5px;letter-spacing:.03em;text-transform:uppercase;padding:8px 16px;border-radius:999px;margin-bottom:14px;box-shadow:0 8px 18px rgba(169,129,31,.35)}
   .green-badge{display:inline-flex;align-self:flex-start;align-items:center;gap:8px;background:var(--green-vivid);color:#fff;font-weight:800;font-size:12.5px;letter-spacing:.03em;text-transform:uppercase;padding:8px 16px;border-radius:999px;margin-bottom:16px}
 
-  /* INTRO */
-  .intro h1{font-size:clamp(26px,7vw,34px);color:var(--red-dark);line-height:1.2}
-  .intro .sparkle{color:var(--gold-deep)}
-  .intro p{color:var(--ink-soft);font-size:16px;margin-top:6px}
-  .intro-img{width:100%;border-radius:16px;margin:20px 0;box-shadow:var(--shadow)}
-  .intro-points{list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:10px}
-  .intro-points li{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:var(--ink)}
-  .intro-points li b{color:var(--green-dark)}
+  .promise-line{font-size:14.5px;color:var(--ink-soft);margin:0 0 16px;font-weight:500}
+  .promise-line b{color:var(--green-dark)}
 
   /* NAME CAPTURE */
   .name-input{width:100%;padding:16px 18px;border-radius:14px;border:2px solid #EADFC3;font-family:'Poppins',sans-serif;font-size:17px;font-weight:600;color:var(--ink);margin-bottom:16px;background:#fff}
@@ -65,14 +59,20 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
 
   /* QUESTIONS */
   .q-eyebrow{font-size:13px;font-weight:700;color:var(--green-vivid);text-transform:uppercase;letter-spacing:.03em;margin-bottom:6px}
-  .q-title{font-size:clamp(21px,6vw,27px);color:var(--red-dark);margin-bottom:22px;line-height:1.3}
+  .q-title{font-size:clamp(21px,6vw,27px);color:var(--red-dark);margin-bottom:18px;line-height:1.3}
   .options{display:flex;flex-direction:column;gap:12px}
   .opt{text-align:left;border:2px solid #EADFC3;background:#fff;border-radius:14px;padding:16px 18px;font-family:'Poppins',sans-serif;font-size:15.5px;font-weight:600;color:var(--ink);cursor:pointer;transition:.15s;display:flex;align-items:center;gap:12px}
   .opt:hover{border-color:var(--green-vivid);background:#F3FBF6}
   .opt.selected{border-color:var(--green-vivid);background:#E8F6EE}
   .opt .emoji{font-size:22px}
 
-  /* BREAK (emotional / authority) */
+  /* MICRO LOADING (entre cada etapa) */
+  .microloading{align-items:center;justify-content:center;text-align:center;gap:14px}
+  .micro-spinner{width:40px;height:40px;border-radius:50%;border:5px solid #EADFC3;border-top-color:var(--gold-deep);animation:spin .8s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .microloading p{color:var(--ink-soft);font-weight:700;font-size:14.5px;max-width:280px}
+
+  /* BREAK (emocional / autoridade) */
   .break{justify-content:center}
   .break-card{background:#fff;border-radius:20px;box-shadow:var(--shadow);padding:26px 22px;border:2px solid var(--gold-light);position:relative;overflow:hidden}
   .break-card::before{content:"✨";position:absolute;top:-6px;right:10px;font-size:50px;opacity:.14}
@@ -89,10 +89,9 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   .mini-stats .n{font-family:'Playfair Display',serif;font-weight:800;color:var(--red-dark);font-size:22px;display:block}
   .mini-stats .l{font-size:11px;color:var(--ink-soft);font-weight:600}
 
-  /* LOADING */
+  /* BIG LOADING final */
   .loading{align-items:center;justify-content:center;text-align:center;gap:18px}
   .spinner{width:58px;height:58px;border-radius:50%;border:6px solid #EADFC3;border-top-color:var(--green-vivid);animation:spin 1s linear infinite}
-  @keyframes spin{to{transform:rotate(360deg)}}
   .loading h3{color:var(--red-dark);font-size:20px}
   .loading p{color:var(--ink-soft);font-size:14.5px}
   .loading-bar{width:100%;max-width:280px;height:8px;background:#EADFC3;border-radius:999px;overflow:hidden}
@@ -168,96 +167,79 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
     <span class="step-count" id="stepCount"></span>
   </div>
 
-  <!-- INTRO -->
-  <section class="screen active intro" id="screen-intro">
-    <span class="gold-badge">🔑 Quiz da Receita de Ouro — 1 minuto</span>
-    <h1>Descubra sua <span class="sparkle">Receita de Ouro</span>: o kit certo pra vender biscoitos de Natal com confiança</h1>
-    <p>Responda algumas perguntas rápidas e descubra exatamente qual receita, preço e embalagem combinam com o seu perfil — e quanto você pode faturar até o Natal.</p>
-    <ul class="intro-points">
-      <li>🔑 <span><b>Receita de Ouro personalizada</b> pro seu tempo e sua experiência</span></li>
-      <li>⏱️ <span>Leva menos de <b>1 minuto</b> pra responder</span></li>
-      <li>🎁 <span>No final, seu <b>plano de ação pra vender no Natal</b></span></li>
-    </ul>
-    <button class="btn btn-primary pulse" onclick="goTo('name')">DESCOBRIR MINHA RECEITA DE OURO 🔑</button>
+  <!-- Q1: abre direto com pergunta objetiva + promessa -->
+  <section class="screen active q" id="screen-q1">
+    <span class="gold-badge">🔑 Em 1 minuto, sua Receita de Ouro</span>
+    <p class="promise-line">Responda e eu monto sua <b>recomendação personalizada</b> de receita, preço e embalagem pro seu perfil.</p>
+    <h2 class="q-title">Você já é confeiteira profissional ou está começando agora com biscoitos de Natal?</h2>
+    <div class="options">
+      <button class="opt" onclick="answer('q1','profissional','Sou profissional, já vendo',this)"><span class="emoji">🚀</span> Sou profissional, já vendo</button>
+      <button class="opt" onclick="answer('q1','crescimento','Vendo informalmente, nada oficial',this)"><span class="emoji">📈</span> Vendo informalmente, nada oficial</button>
+      <button class="opt" onclick="answer('q1','iniciante','Ainda não comecei, mas quero',this)"><span class="emoji">🌱</span> Ainda não comecei, mas quero</button>
+    </div>
+  </section>
+
+  <!-- MICRO LOADING (reutilizado entre todas as etapas) -->
+  <section class="screen microloading" id="screen-microloading">
+    <div class="micro-spinner"></div>
+    <p id="microloadingText">Ajustando sua recomendação...</p>
   </section>
 
   <!-- NAME -->
   <section class="screen" id="screen-name">
-    <div class="q-eyebrow">Antes de começar</div>
-    <h2 class="q-title">Pra eu te chamar certo no seu resultado, qual seu primeiro nome?</h2>
+    <div class="q-eyebrow">Quase lá</div>
+    <h2 class="q-title">Pra eu personalizar seu resultado com seu nome, como você se chama?</h2>
     <input type="text" class="name-input" id="nameInput" placeholder="Digite seu primeiro nome" maxlength="30">
     <button class="btn btn-primary pulse" onclick="submitName()">CONTINUAR 🎄</button>
   </section>
 
-  <!-- Q1 -->
-  <section class="screen q" id="screen-q1">
-    <div class="q-eyebrow">Pergunta 1</div>
-    <h2 class="q-title">Você já vende biscoitos decorados?</h2>
-    <div class="options">
-      <button class="opt" onclick="answer('q1','iniciante','Nunca vendi, mas quero começar',this)"><span class="emoji">🌱</span> Nunca vendi, mas quero começar</button>
-      <button class="opt" onclick="answer('q1','crescimento','Já vendo informalmente pra amigos e família',this)"><span class="emoji">📈</span> Já vendo informalmente pra amigos e família</button>
-      <button class="opt" onclick="answer('q1','profissional','Já tenho encomendas e quero profissionalizar',this)"><span class="emoji">🚀</span> Já tenho encomendas e quero profissionalizar</button>
-    </div>
-  </section>
-
-  <!-- Q2 -->
+  <!-- Q2 (dor direta) -->
   <section class="screen q" id="screen-q2">
-    <div class="q-eyebrow">Pergunta 2</div>
-    <h2 class="q-title">Quanto tempo você tem disponível por semana pra produzir?</h2>
+    <div class="q-eyebrow">Pergunta 2 de 5</div>
+    <h2 class="q-title" id="q2Title">Qual sua maior trava hoje?</h2>
     <div class="options">
-      <button class="opt" onclick="answer('q2','pouco','Só nos fins de semana',this)"><span class="emoji">🕒</span> Só nos fins de semana</button>
-      <button class="opt" onclick="answer('q2','medio','Um pouquinho todo dia',this)"><span class="emoji">⏳</span> Um pouquinho todo dia</button>
-      <button class="opt" onclick="answer('q2','muito','Bastante tempo livre',this)"><span class="emoji">⏱️</span> Bastante tempo livre</button>
+      <button class="opt" onclick="answer('q2','preco','Não sei que preço cobrar',this)"><span class="emoji">💰</span> Não sei que preço cobrar</button>
+      <button class="opt" onclick="answer('q2','receita','Não tenho receitas testadas',this)"><span class="emoji">📖</span> Não tenho receitas testadas</button>
+      <button class="opt" onclick="answer('q2','embalagem','Não sei embalar e apresentar bonito',this)"><span class="emoji">🎀</span> Não sei embalar e apresentar bonito</button>
+      <button class="opt" onclick="answer('q2','venda','Não sei como divulgar e vender',this)"><span class="emoji">📣</span> Não sei como divulgar e vender</button>
     </div>
   </section>
 
-  <!-- BREAK 1: identificação + nome chiclete teaser -->
+  <!-- BREAK 1: identificação emocional usando a resposta da Q2 -->
   <section class="screen break" id="screen-break1">
     <div class="break-card">
       <span class="green-badge">💬 Uma pausa rápida</span>
       <h2 id="break1Title">Essa Receita de Ouro não é pra qualquer uma</h2>
-      <p>É pra quem se encaixa em pelo menos uma dessas situações:</p>
+      <p id="break1Desc">É pra quem se encaixa em pelo menos uma dessas situações:</p>
       <ul>
         <li>🙋‍♀️ Já vende, mas sente que cobra barato demais pelo que entrega</li>
         <li>😰 Quer começar, mas trava no "não sei por onde"</li>
         <li>💸 Já perdeu dinheiro testando receita que não deu certo</li>
       </ul>
-      <p>Se você se identificou com pelo menos uma, <b>fica até o final</b> — o que vem a seguir pode mudar como você vai vender esse Natal.</p>
+      <p>Se você se identificou, <b>fica até o final</b> — o que vem a seguir pode mudar como você vai vender esse Natal.</p>
       <div class="mini-stats">
         <div><span class="n">500+</span><span class="l">mulheres usando</span></div>
         <div><span class="n">80</span><span class="l">encomendas no melhor relato</span></div>
       </div>
     </div>
     <div style="margin-top:20px">
-      <button class="btn btn-primary pulse" onclick="goTo('q3')">QUERO CONTINUAR 🔑</button>
+      <button class="btn btn-primary pulse" onclick="nextFrom('break1')">QUERO CONTINUAR 🔑</button>
     </div>
   </section>
 
-  <!-- Q3 (problema) -->
+  <!-- Q3 (implicação / dor mais funda) -->
   <section class="screen q" id="screen-q3">
-    <div class="q-eyebrow">Pergunta 3</div>
-    <h2 class="q-title">Qual sua maior trava hoje?</h2>
-    <div class="options">
-      <button class="opt" onclick="answer('q3','preco','Não sei que preço cobrar',this)"><span class="emoji">💰</span> Não sei que preço cobrar</button>
-      <button class="opt" onclick="answer('q3','receita','Não tenho receitas testadas',this)"><span class="emoji">📖</span> Não tenho receitas testadas</button>
-      <button class="opt" onclick="answer('q3','embalagem','Não sei embalar e apresentar bonito',this)"><span class="emoji">🎀</span> Não sei embalar e apresentar bonito</button>
-      <button class="opt" onclick="answer('q3','venda','Não sei como divulgar e vender',this)"><span class="emoji">📣</span> Não sei como divulgar e vender</button>
-    </div>
-  </section>
-
-  <!-- Q4 (implicação / dor) -->
-  <section class="screen q" id="screen-q4">
-    <div class="q-eyebrow">Pergunta 4</div>
+    <div class="q-eyebrow">Pergunta 3 de 5</div>
     <h2 class="q-title">Pensando em Natais anteriores, o que mais pesou?</h2>
     <div class="options">
-      <button class="opt" onclick="answer('q4','recusei','Recusei pedido com medo de cobrar errado',this)"><span class="emoji">😣</span> Recusei pedido com medo de cobrar errado</button>
-      <button class="opt" onclick="answer('q4','vi_outras','Vi outras pessoas vendendo e fiquei só pensando em começar',this)"><span class="emoji">👀</span> Vi outras vendendo e fiquei só pensando em começar</button>
-      <button class="opt" onclick="answer('q4','testei','Perdi tempo e dinheiro testando receita que não deu certo',this)"><span class="emoji">⏳</span> Perdi tempo testando receita que não deu certo</button>
-      <button class="opt" onclick="answer('q4','nada','Ainda não vivi isso, mas não quero viver',this)"><span class="emoji">🙅‍♀️</span> Ainda não vivi isso, mas não quero viver</button>
+      <button class="opt" onclick="answer('q3','recusei','Recusei pedido com medo de cobrar errado',this)"><span class="emoji">😣</span> Recusei pedido com medo de cobrar errado</button>
+      <button class="opt" onclick="answer('q3','vi_outras','Vi outras vendendo e fiquei só pensando em começar',this)"><span class="emoji">👀</span> Vi outras vendendo e fiquei só pensando em começar</button>
+      <button class="opt" onclick="answer('q3','testei','Perdi tempo e dinheiro testando receita que não deu certo',this)"><span class="emoji">⏳</span> Perdi tempo testando receita que não deu certo</button>
+      <button class="opt" onclick="answer('q3','nada','Ainda não vivi isso, mas não quero viver',this)"><span class="emoji">🙅‍♀️</span> Ainda não vivi isso, mas não quero viver</button>
     </div>
   </section>
 
-  <!-- AUTHORITY / MECHANISM BREAK -->
+  <!-- AUTHORITY / MECHANISM BREAK (usando a resposta da Q3) -->
   <section class="screen break" id="screen-authority">
     <div class="break-card">
       <span class="gold-badge">🔑 O segredo por trás disso</span>
@@ -270,33 +252,33 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
       </div>
     </div>
     <div style="margin-top:20px">
-      <button class="btn btn-primary pulse" onclick="goTo('q5')">QUERO MINHA RECEITA DE OURO 🔑</button>
+      <button class="btn btn-primary pulse" onclick="nextFrom('authority')">QUERO MINHA RECEITA DE OURO 🔑</button>
     </div>
   </section>
 
-  <!-- Q5 (desejo) -->
-  <section class="screen q" id="screen-q5">
-    <div class="q-eyebrow">Pergunta 5</div>
+  <!-- Q4 (desejo) -->
+  <section class="screen q" id="screen-q4">
+    <div class="q-eyebrow">Pergunta 4 de 5</div>
     <h2 class="q-title">Quanto você gostaria de faturar até o Natal?</h2>
     <div class="options">
-      <button class="opt" onclick="answer('q5','500','R$500 a R$800',this)"><span class="emoji">💵</span> R$500 a R$800</button>
-      <button class="opt" onclick="answer('q5','800','R$800 a R$2.000',this)"><span class="emoji">💰</span> R$800 a R$2.000</button>
-      <button class="opt" onclick="answer('q5','2000','R$2.000 a R$5.000 ou mais',this)"><span class="emoji">🤑</span> R$2.000 a R$5.000 ou mais</button>
+      <button class="opt" onclick="answer('q4','500','R$500 a R$800',this)"><span class="emoji">💵</span> R$500 a R$800</button>
+      <button class="opt" onclick="answer('q4','800','R$800 a R$2.000',this)"><span class="emoji">💰</span> R$800 a R$2.000</button>
+      <button class="opt" onclick="answer('q4','2000','R$2.000 a R$5.000 ou mais',this)"><span class="emoji">🤑</span> R$2.000 a R$5.000 ou mais</button>
     </div>
   </section>
 
-  <!-- Q6 (urgência) -->
-  <section class="screen q" id="screen-q6">
-    <div class="q-eyebrow">Última pergunta</div>
+  <!-- Q5 (urgência) -->
+  <section class="screen q" id="screen-q5">
+    <div class="q-eyebrow">Última pergunta — 5 de 5</div>
     <h2 class="q-title">Quando você quer começar a vender?</h2>
     <div class="options">
-      <button class="opt" onclick="answer('q6','agora','Essa semana',this)"><span class="emoji">🔥</span> Essa semana</button>
-      <button class="opt" onclick="answer('q6','mes','Ainda em novembro',this)"><span class="emoji">📅</span> Ainda em novembro</button>
-      <button class="opt" onclick="answer('q6','natal','Pra vender agora no Natal',this)"><span class="emoji">🎄</span> Pra vender agora no Natal</button>
+      <button class="opt" onclick="answer('q5','agora','Essa semana',this)"><span class="emoji">🔥</span> Essa semana</button>
+      <button class="opt" onclick="answer('q5','mes','Ainda em novembro',this)"><span class="emoji">📅</span> Ainda em novembro</button>
+      <button class="opt" onclick="answer('q5','natal','Pra vender agora no Natal',this)"><span class="emoji">🎄</span> Pra vender agora no Natal</button>
     </div>
   </section>
 
-  <!-- LOADING -->
+  <!-- BIG LOADING final -->
   <section class="screen loading" id="screen-loading">
     <div class="spinner"></div>
     <h3>Montando sua Receita de Ouro...</h3>
@@ -309,7 +291,7 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
     <span class="green-badge">✅ Vamos recapitular</span>
     <h2 class="q-title" id="recapTitle">Com base no que você respondeu:</h2>
     <div class="recap-list" id="recapList"></div>
-    <button class="btn btn-primary pulse" onclick="goTo('prepitch')">VER MINHA RECEITA DE OURO 🔑</button>
+    <button class="btn btn-primary pulse" onclick="nextFrom('recap')">VER MINHA RECEITA DE OURO 🔑</button>
   </section>
 
   <!-- PRE-PITCH -->
@@ -329,7 +311,7 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
     <div class="commit-box">
       <p id="commitText">Você está pronta pra transformar isso em encomendas reais esse Natal?</p>
     </div>
-    <button class="btn btn-primary pulse" onclick="goTo('result')">SIM, QUERO MINHA RECEITA DE OURO 🔑</button>
+    <button class="btn btn-primary pulse" onclick="nextFrom('prepitch')">SIM, QUERO MINHA RECEITA DE OURO 🔑</button>
   </section>
 
   <!-- RESULT -->
@@ -391,27 +373,72 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
 
 <script>
   var answers = {};
-  var qScreens = ['q1','q2','q3','q4','q5','q6'];
-  var screenHistory = ['intro'];
+  var qScreens = ['q1','q2','q3','q4','q5'];
+  var pendingNext = null; // id para onde a microloading vai levar
 
-  function goTo(id){
-    screenHistory.push(id);
-    showScreen(id);
+  // Mapa de telas que não são pergunta (pra controlar a barra de progresso)
+  function updateTopbar(id){
+    var topbar = document.getElementById('topbar');
+    var idx = qScreens.indexOf(id);
+    if(idx === -1){
+      topbar.style.display = 'none';
+    } else {
+      topbar.style.display = 'flex';
+      document.getElementById('progressBar').style.width = (((idx+1)/qScreens.length)*100) + '%';
+      document.getElementById('stepCount').textContent = (idx+1) + '/' + qScreens.length;
+    }
   }
 
   function showScreen(id){
     document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
     document.getElementById('screen-'+id).classList.add('active');
+    updateTopbar(id);
+    window.scrollTo(0,0);
+  }
+
+  // Transição com "otimizando" entre toda e qualquer etapa
+  function transitionTo(nextId, text){
+    document.getElementById('microloadingText').textContent = text;
+    // mantém a barra de progresso já avançada enquanto "carrega"
     var topbar = document.getElementById('topbar');
-    if(qScreens.indexOf(id) === -1){
-      topbar.style.display = 'none';
-    } else {
+    var idx = qScreens.indexOf(nextId);
+    document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
+    document.getElementById('screen-microloading').classList.add('active');
+    if(idx !== -1){
       topbar.style.display = 'flex';
-      var idx = qScreens.indexOf(id);
       document.getElementById('progressBar').style.width = (((idx+1)/qScreens.length)*100) + '%';
       document.getElementById('stepCount').textContent = (idx+1) + '/' + qScreens.length;
     }
     window.scrollTo(0,0);
+    setTimeout(function(){
+      showScreen(nextId);
+      if(nextId === 'loading'){ runLoading(); }
+    }, 850);
+  }
+
+  function capitalize(s){
+    if(!s) return s;
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+
+  // Fluxo principal de perguntas
+  var afterAnswer = {
+    q1: {next:'name', text:'Perfeito! Preparando sua recomendação pro seu nível...'},
+    q2: {next:'break1', text:'Entendido! Ajustando sua Receita de Ouro...'},
+    q3: {next:'authority', text:'Anotado. Isso vai entrar no seu plano personalizado...'},
+    q4: {next:'q5', text:'Calculando seu potencial de faturamento...'},
+    q5: {next:'loading', text:'Fechando sua Receita de Ouro personalizada...'}
+  };
+
+  function answer(qKey, value, label, el){
+    answers[qKey] = {value:value, label:label};
+    el.classList.add('selected');
+    var step = afterAnswer[qKey];
+    setTimeout(function(){
+      if(qKey === 'q2'){ updateBreak1(); }
+      if(qKey === 'q3'){ updateAuthority(); }
+      transitionTo(step.next, step.text);
+    }, 220);
   }
 
   function submitName(){
@@ -419,7 +446,7 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
     answers.name = v || 'futura vendedora';
     fbq('track','Lead',{content_name:'Quiz Receita de Ouro - Iniciado'});
     personalizeCopy();
-    goTo('q1');
+    transitionTo('q2', 'Oi, ' + capitalize(answers.name) + '! Personalizando sua experiência...');
   }
 
   function personalizeCopy(){
@@ -428,28 +455,29 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
     document.getElementById('authorityTitle').textContent = n + ', a diferença não é talento na cozinha';
   }
 
-  function capitalize(s){
-    if(!s) return s;
-    return s.charAt(0).toUpperCase() + s.slice(1);
+  function updateBreak1(){
+    var n = capitalize(answers.name);
+    var trava = answers.q2 ? answers.q2.label : '';
+    document.getElementById('break1Desc').textContent = 'Você disse que sua maior trava é "' + trava + '" — e é exatamente isso que a Receita de Ouro resolve, pra quem:';
   }
 
-  function answer(qKey, value, label, el){
-    answers[qKey] = {value:value, label:label};
-    el.classList.add('selected');
-    var next = {
-      q1:'q2', q2:'break1', q3:'q4', q4:'authority', q5:'q6', q6:'loading'
-    };
-    setTimeout(function(){
-      goTo(next[qKey]);
-      if(next[qKey] === 'loading'){ runLoading(); }
-    }, 220);
+  function updateAuthority(){
+    var dor = answers.q3 ? answers.q3.label : '';
+    document.getElementById('authorityDesc').innerHTML = 'Você mencionou: "<b>' + dor + '</b>". Isso acontece porque falta a <span class="mechanism-name">Receita de Ouro</span> — a combinação exata de receita já testada, ficha técnica com preço pronto e embalagem que faz o cliente pagar mais. Quando você tem isso em mãos, a insegurança desaparece: você só decora, embala e cobra o preço certo.';
+  }
+
+  // Navegação a partir de telas de break/recap/prepitch (botões próprios)
+  function nextFrom(screenId){
+    if(screenId === 'break1'){ transitionTo('q3', 'Avançando pro próximo passo...'); }
+    else if(screenId === 'authority'){ transitionTo('q4', 'Liberando as próximas perguntas...'); }
+    else if(screenId === 'recap'){ transitionTo('prepitch', 'Preparando sua oferta personalizada...'); }
+    else if(screenId === 'prepitch'){ transitionTo('result', 'Liberando sua Receita de Ouro...'); }
   }
 
   function goBack(){
     var current = document.querySelector('.screen.active').id.replace('screen-','');
     var idx = qScreens.indexOf(current);
     if(idx > 0){ showScreen(qScreens[idx-1]); }
-    else { showScreen('name'); }
   }
 
   function runLoading(){
@@ -457,6 +485,7 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
     var i = 0;
     var txt = document.getElementById('loadingText');
     var fill = document.getElementById('loadingFill');
+    fill.style.width = '0%';
     var interval = setInterval(function(){
       i++;
       if(i < msgs.length){ txt.textContent = msgs[i]; }
@@ -467,7 +496,7 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
       clearInterval(interval);
       buildRecap();
       buildResult();
-      goTo('recap');
+      showScreen('recap');
     }, 1900);
   }
 
@@ -476,10 +505,10 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
     document.getElementById('recapTitle').textContent = 'Com base no que você respondeu, ' + n + ':';
     var items = [];
     if(answers.q1) items.push('Perfil: <b>' + answers.q1.label + '</b>');
-    if(answers.q3) items.push('Sua maior trava: <b>' + answers.q3.label + '</b>');
-    if(answers.q4) items.push('O que mais pesou: <b>' + answers.q4.label + '</b>');
-    if(answers.q5) items.push('Meta de faturamento: <b>' + answers.q5.label + '</b>');
-    if(answers.q6) items.push('Quando quer começar: <b>' + answers.q6.label + '</b>');
+    if(answers.q2) items.push('Sua maior trava: <b>' + answers.q2.label + '</b>');
+    if(answers.q3) items.push('O que mais pesou: <b>' + answers.q3.label + '</b>');
+    if(answers.q4) items.push('Meta de faturamento: <b>' + answers.q4.label + '</b>');
+    if(answers.q5) items.push('Quando quer começar: <b>' + answers.q5.label + '</b>');
     var html = '';
     items.forEach(function(it){
       html += '<div class="recap-item"><span class="check">✓</span><span>' + it + '</span></div>';
@@ -543,7 +572,7 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
       var current = document.querySelector('.screen.active');
       if(!current) return;
       var id = current.id.replace('screen-','');
-      if(id === 'result' || id === 'intro') return;
+      if(id === 'result' || id === 'q1' || id === 'microloading') return;
       shown = true;
       document.getElementById('exitOverlay').classList.add('active');
     });
@@ -563,6 +592,8 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
     }catch(e){}
     window.location.href = checkoutLinks[key];
   }
+
+  updateTopbar('q1');
 </script>
 </body>
 </html>
