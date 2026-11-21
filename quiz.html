@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qual Kit de Biscoitos de Natal combina com você?</title>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1109818678482541');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#C41230; --red-dark:#7E0D1E; --red-darker:#5C0A17; --red-light:#E6495C;
+    --green:#0E4D30; --green-dark:#0A3822; --green-vivid:#147A43;
+    --gold:#D4AF37; --gold-light:#EFD37B;
+    --cream:#FFF8EA; --cream-dark:#F5E9CC;
+    --ink:#2A1C14; --ink-soft:#5B4A3C;
+    --radius:18px;
+    --shadow:0 18px 40px rgba(42,28,20,.16);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Poppins',sans-serif;color:var(--ink);background:var(--cream);line-height:1.5;min-height:100vh}
+  h1,h2,h3{font-family:'Playfair Display',serif;margin:0 0 10px}
+  .wrap{max-width:520px;margin:0 auto;padding:22px 20px 60px;min-height:100vh;display:flex;flex-direction:column}
+  .topbar{display:flex;align-items:center;gap:12px;padding:6px 0 18px}
+  .progress-outer{flex:1;height:8px;background:#EADFC3;border-radius:999px;overflow:hidden}
+  .progress-inner{height:100%;width:0%;background:linear-gradient(90deg,var(--green-vivid),var(--green-dark));border-radius:999px;transition:width .4s ease}
+  .step-count{font-size:12.5px;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+  .back-btn{border:none;background:none;color:var(--ink-soft);font-size:20px;cursor:pointer;padding:4px 8px;line-height:1}
+  .screen{display:none;flex:1;flex-direction:column;animation:fadeIn .35s ease}
+  .screen.active{display:flex}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  /* INTRO */
+  .intro-badge{display:inline-flex;align-self:flex-start;align-items:center;gap:8px;background:var(--green-vivid);color:#fff;font-weight:800;font-size:12.5px;letter-spacing:.03em;text-transform:uppercase;padding:8px 16px;border-radius:999px;margin-bottom:18px}
+  .intro h1{font-size:clamp(26px,7vw,34px);color:var(--red-dark);line-height:1.2}
+  .intro p{color:var(--ink-soft);font-size:16px;margin-top:6px}
+  .intro-img{width:100%;border-radius:16px;margin:20px 0;box-shadow:var(--shadow)}
+  .intro-points{list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:10px}
+  .intro-points li{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:var(--ink)}
+  .intro-points li b{color:var(--green-dark)}
+
+  /* QUESTIONS */
+  .q-eyebrow{font-size:13px;font-weight:700;color:var(--green-vivid);text-transform:uppercase;letter-spacing:.03em;margin-bottom:6px}
+  .q-title{font-size:clamp(21px,6vw,27px);color:var(--red-dark);margin-bottom:22px;line-height:1.3}
+  .options{display:flex;flex-direction:column;gap:12px}
+  .opt{text-align:left;border:2px solid #EADFC3;background:#fff;border-radius:14px;padding:16px 18px;font-family:'Poppins',sans-serif;font-size:15.5px;font-weight:600;color:var(--ink);cursor:pointer;transition:.15s;display:flex;align-items:center;gap:12px}
+  .opt:hover{border-color:var(--green-vivid);background:#F3FBF6}
+  .opt.selected{border-color:var(--green-vivid);background:#E8F6EE}
+  .opt .emoji{font-size:22px}
+
+  /* LOADING */
+  .loading{align-items:center;justify-content:center;text-align:center;gap:18px}
+  .spinner{width:58px;height:58px;border-radius:50%;border:6px solid #EADFC3;border-top-color:var(--green-vivid);animation:spin 1s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .loading h3{color:var(--red-dark);font-size:20px}
+  .loading p{color:var(--ink-soft);font-size:14.5px}
+  .loading-bar{width:100%;max-width:280px;height:8px;background:#EADFC3;border-radius:999px;overflow:hidden}
+  .loading-bar i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--green-vivid),var(--gold));border-radius:999px}
+
+  /* RESULT */
+  .result-badge{align-self:center;background:var(--gold-light);color:var(--ink);font-weight:800;font-size:12.5px;text-transform:uppercase;letter-spacing:.03em;padding:7px 16px;border-radius:999px;margin-bottom:14px}
+  .result h2{text-align:center;color:var(--red-dark);font-size:clamp(24px,7vw,30px);line-height:1.25}
+  .result .profile{text-align:center;color:var(--green-vivid);font-family:'Playfair Display',serif;font-style:italic;font-size:19px;margin-bottom:14px}
+  .result p.desc{text-align:center;color:var(--ink-soft);font-size:15.5px;margin-bottom:18px}
+  .result-img{width:100%;border-radius:16px;box-shadow:var(--shadow);margin-bottom:20px}
+  .faturamento-box{background:#fff;border:2px dashed var(--gold);border-radius:14px;padding:16px 18px;text-align:center;margin-bottom:22px}
+  .faturamento-box .num{font-family:'Playfair Display',serif;font-size:30px;font-weight:800;color:var(--red-dark);display:block}
+  .faturamento-box .lbl{font-size:13px;color:var(--ink-soft);font-weight:600}
+  .offer-card{background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:20px;margin-bottom:14px;border:2px solid var(--gold-light)}
+  .offer-card .tag{display:inline-block;background:var(--red);color:#fff;font-size:11.5px;font-weight:800;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin-bottom:10px}
+  .offer-card h3{font-size:19px;color:var(--ink)}
+  .offer-card .price{font-size:14px;color:var(--ink-soft);margin:6px 0 14px}
+  .offer-card .price b{font-size:26px;color:var(--red-dark);font-family:'Playfair Display',serif}
+  .offer-card .price s{color:#A99}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;width:100%;padding:16px 20px;border-radius:999px;font-weight:800;font-size:15.5px;text-decoration:none;border:none;cursor:pointer;font-family:'Poppins',sans-serif}
+  .btn-primary{background:linear-gradient(135deg,var(--red),var(--red-darker));color:#fff;box-shadow:0 14px 30px rgba(196,18,48,.45)}
+  .btn-ghost{background:#fff;color:var(--ink);border:2px solid #EADFC3;margin-top:10px}
+  .pulse{animation:pulse 1.8s infinite}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+  .guarantee-row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:16px;font-size:12.5px;color:var(--ink-soft);font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar" id="topbar" style="display:none">
+    <button class="back-btn" onclick="goBack()" aria-label="Voltar">‹</button>
+    <div class="progress-outer"><div class="progress-inner" id="progressBar"></div></div>
+    <span class="step-count" id="stepCount"></span>
+  </div>
+
+  <!-- INTRO -->
+  <section class="screen active intro" id="screen-intro">
+    <span class="intro-badge">🎄 Quiz rápido — 30 segundos</span>
+    <h1>Descubra qual Kit de Biscoitos de Natal combina com seu perfil</h1>
+    <p>Responda 4 perguntas rápidas e veja uma recomendação personalizada — incluindo quanto você pode faturar até o Natal com o seu perfil.</p>
+    <ul class="intro-points">
+      <li>🍪 <span><b>100% personalizado</b> pro seu tempo e sua experiência</span></li>
+      <li>⏱️ <span>Leva menos de <b>1 minuto</b> pra responder</span></li>
+      <li>🎁 <span>No final, seu <b>plano de ação pra vender no Natal</b></span></li>
+    </ul>
+    <button class="btn btn-primary pulse" onclick="startQuiz()">COMEÇAR O QUIZ 🎄</button>
+  </section>
+
+  <!-- Q1 -->
+  <section class="screen q" id="screen-q1">
+    <div class="q-eyebrow">Pergunta 1 de 4</div>
+    <h2 class="q-title">Você já vende biscoitos decorados?</h2>
+    <div class="options">
+      <button class="opt" onclick="answer(1,'iniciante',this)"><span class="emoji">🌱</span> Nunca vendi, mas quero começar</button>
+      <button class="opt" onclick="answer(1,'crescimento',this)"><span class="emoji">📈</span> Já vendo informalmente pra amigos e família</button>
+      <button class="opt" onclick="answer(1,'profissional',this)"><span class="emoji">🚀</span> Já tenho encomendas e quero profissionalizar</button>
+    </div>
+  </section>
+
+  <!-- Q2 -->
+  <section class="screen q" id="screen-q2">
+    <div class="q-eyebrow">Pergunta 2 de 4</div>
+    <h2 class="q-title">Quanto tempo você tem disponível por semana pra produzir?</h2>
+    <div class="options">
+      <button class="opt" onclick="answer(2,'pouco',this)"><span class="emoji">🕒</span> Só nos fins de semana</button>
+      <button class="opt" onclick="answer(2,'medio',this)"><span class="emoji">⏳</span> Um pouquinho todo dia</button>
+      <button class="opt" onclick="answer(2,'muito',this)"><span class="emoji">⏱️</span> Bastante tempo livre</button>
+    </div>
+  </section>
+
+  <!-- Q3 -->
+  <section class="screen q" id="screen-q3">
+    <div class="q-eyebrow">Pergunta 3 de 4</div>
+    <h2 class="q-title">Qual sua maior trava hoje?</h2>
+    <div class="options">
+      <button class="opt" onclick="answer(3,'preco',this)"><span class="emoji">💰</span> Não sei que preço cobrar</button>
+      <button class="opt" onclick="answer(3,'receita',this)"><span class="emoji">📖</span> Não tenho receitas testadas</button>
+      <button class="opt" onclick="answer(3,'embalagem',this)"><span class="emoji">🎀</span> Não sei embalar e apresentar bonito</button>
+      <button class="opt" onclick="answer(3,'venda',this)"><span class="emoji">📣</span> Não sei como divulgar e vender</button>
+    </div>
+  </section>
+
+  <!-- Q4 -->
+  <section class="screen q" id="screen-q4">
+    <div class="q-eyebrow">Pergunta 4 de 4</div>
+    <h2 class="q-title">Quando você quer começar a vender?</h2>
+    <div class="options">
+      <button class="opt" onclick="answer(4,'agora',this)"><span class="emoji">🔥</span> Essa semana</button>
+      <button class="opt" onclick="answer(4,'mes',this)"><span class="emoji">📅</span> Ainda em novembro</button>
+      <button class="opt" onclick="answer(4,'natal',this)"><span class="emoji">🎄</span> Pra vender agora no Natal</button>
+    </div>
+  </section>
+
+  <!-- LOADING -->
+  <section class="screen loading" id="screen-loading">
+    <div class="spinner"></div>
+    <h3>Calculando seu perfil...</h3>
+    <p id="loadingText">Analisando suas respostas</p>
+    <div class="loading-bar"><i id="loadingFill"></i></div>
+  </section>
+
+  <!-- RESULT -->
+  <section class="screen result" id="screen-result">
+    <span class="result-badge">✅ Resultado pronto</span>
+    <h2>Seu perfil é:</h2>
+    <div class="profile" id="profileName">—</div>
+    <p class="desc" id="profileDesc">—</p>
+
+    <img class="result-img" src="assets/banner_oferta_completa.png" alt="Oferta Completa — Renda Extra com Biscoitos de Natal" loading="lazy">
+
+    <div class="faturamento-box">
+      <span class="num" id="faturamentoEstimado">R$800 a R$2.000</span>
+      <span class="lbl">potencial estimado pra você faturar até o Natal com esse perfil</span>
+    </div>
+
+    <div class="offer-card">
+      <span class="tag">Recomendado pro seu perfil</span>
+      <h3>Kit Completo — Renda Extra com Biscoitos de Natal</h3>
+      <p class="price">De <s>R$92</s> por <b>R$29,90</b></p>
+      <button class="btn btn-primary pulse" onclick="goToCheckout('completa')">QUERO ESSE KIT AGORA 🎄</button>
+      <button class="btn btn-ghost" onclick="goToCheckout('simples')">Prefiro a oferta essencial</button>
+    </div>
+
+    <div class="guarantee-row">
+      <span>✅ Garantia de 7 dias</span>
+      <span>✅ Acesso imediato</span>
+      <span>✅ Pagamento seguro Hotmart</span>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  var answers = {};
+  var order = ['intro','q1','q2','q3','q4','loading','result'];
+  var qScreens = ['q1','q2','q3','q4'];
+
+  function showScreen(id){
+    document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
+    document.getElementById('screen-'+id).classList.add('active');
+    var topbar = document.getElementById('topbar');
+    if(id === 'intro' || id === 'loading' || id === 'result'){
+      topbar.style.display = 'none';
+    } else {
+      topbar.style.display = 'flex';
+      var idx = qScreens.indexOf(id);
+      document.getElementById('progressBar').style.width = (((idx+1)/qScreens.length)*100) + '%';
+      document.getElementById('stepCount').textContent = (idx+1) + '/' + qScreens.length;
+    }
+    window.scrollTo(0,0);
+  }
+
+  function startQuiz(){
+    fbq('track','Lead',{content_name:'Quiz Biscoitos - Iniciado'});
+    showScreen('q1');
+  }
+
+  function answer(qNum, value, el){
+    answers['q'+qNum] = value;
+    el.classList.add('selected');
+    setTimeout(function(){
+      if(qNum < 4){
+        showScreen('q'+(qNum+1));
+      } else {
+        runLoading();
+      }
+    }, 220);
+  }
+
+  function goBack(){
+    var current = document.querySelector('.screen.active').id.replace('screen-','');
+    var idx = qScreens.indexOf(current);
+    if(idx > 0){ showScreen(qScreens[idx-1]); }
+    else { showScreen('intro'); }
+  }
+
+  function runLoading(){
+    showScreen('loading');
+    var msgs = ['Analisando suas respostas...','Calculando seu potencial de faturamento...','Montando sua recomendação...'];
+    var i = 0;
+    var txt = document.getElementById('loadingText');
+    var fill = document.getElementById('loadingFill');
+    var interval = setInterval(function(){
+      i++;
+      if(i < msgs.length){ txt.textContent = msgs[i]; }
+    }, 500);
+    fill.style.transition = 'width 1.6s linear';
+    requestAnimationFrame(function(){ fill.style.width = '100%'; });
+    setTimeout(function(){
+      clearInterval(interval);
+      buildResult();
+      fbq('track','CompleteRegistration',{content_name:'Quiz Biscoitos - Concluido'});
+      showScreen('result');
+    }, 1700);
+  }
+
+  function buildResult(){
+    var profiles = {
+      iniciante: {
+        name: 'A Iniciante Determinada',
+        desc: 'Você está começando do zero — e é exatamente por isso que o passo a passo completo (receitas já testadas, ficha técnica e preço pronto) vai te poupar meses de tentativa e erro.',
+        faturamento: 'R$500 a R$1.200'
+      },
+      crescimento: {
+        name: 'A Vendedora em Crescimento',
+        desc: 'Você já vende informalmente e sente que pode ir além. O que falta não é esforço — é profissionalizar embalagem, preço e apresentação pra vender mais caro e com mais confiança.',
+        faturamento: 'R$800 a R$2.000'
+      },
+      profissional: {
+        name: 'A Futura Profissional',
+        desc: 'Você já tem demanda real — agora é hora de estruturar produção, precificação e embalagem pra atender mais encomendas sem perder qualidade nem lucro.',
+        faturamento: 'R$1.500 a R$5.000'
+      }
+    };
+    var p = profiles[answers.q1] || profiles.crescimento;
+    document.getElementById('profileName').textContent = p.name;
+    document.getElementById('profileDesc').textContent = p.desc;
+    document.getElementById('faturamentoEstimado').textContent = p.faturamento;
+  }
+
+  var checkoutLinks = {
+    completa: 'https://pay.hotmart.com/V108427395Y?checkoutMode=10&utm_source=quiz&utm_medium=funil_quiz&utm_campaign=natal_quiz',
+    simples: 'https://pay.hotmart.com/Q108435013W?checkoutMode=10&utm_source=quiz&utm_medium=funil_quiz&utm_campaign=natal_quiz'
+  };
+  function goToCheckout(key){
+    try{
+      fbq('track', 'InitiateCheckout', { content_name: key === 'completa' ? 'Oferta Completa (Quiz)' : 'Oferta Essencial (Quiz)' });
+    }catch(e){}
+    window.location.href = checkoutLinks[key];
+  }
+</script>
+</body>
+</html>
