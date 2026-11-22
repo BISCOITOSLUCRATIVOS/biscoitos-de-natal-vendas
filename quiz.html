@@ -340,19 +340,17 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   </section>
 
   <!-- PRE-PITCH -->
+  <!-- ANTES E DEPOIS: fotos reais passando em modo "carregando" -->
+  <section class="screen proofreveal" id="screen-antesdepois">
+    <div class="micro-spinner"></div>
+    <h3 id="adTitle">Carregando antes e depois reais...</h3>
+    <div class="proof-big"><img id="adImg" src="assets/antes-depois/ad-01.jpg" alt="Antes e depois: biscoitos de Natal"></div>
+    <p class="proof-caption" id="adCaption">É assim que fica quando você tem as Receitas Virais de Natal certas</p>
+    <div class="proof-dots" id="adDots"></div>
+  </section>
+
   <section class="screen prepitch" id="screen-prepitch">
-    <span class="gold-badge">🎄 Antes e depois</span>
-    <h2 class="q-title">É assim que fica quando você tem as Receitas Virais de Natal certas</h2>
-    <div class="antes-depois">
-      <div class="ad-card antes">
-        <span class="tag">Antes</span>
-        <p>Insegura, sem saber o preço certo, vendendo só pra poucos amigos</p>
-      </div>
-      <div class="ad-card depois">
-        <span class="tag">Depois</span>
-        <p>Encomendas confirmadas, preço certo e embalagem que vende sozinha</p>
-      </div>
-    </div>
+    <span class="gold-badge">🎄 Chegou a hora</span>
     <div class="commit-box">
       <p id="commitText">Você está pronta pra transformar isso em encomendas reais esse Natal?</p>
     </div>
@@ -457,6 +455,7 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
       showScreen(nextId);
       if(nextId === 'loading'){ runLoading(); }
       if(nextId === 'proof'){ runProof(); }
+      if(nextId === 'antesdepois'){ runAntesDepois(); }
     }, 850);
   }
 
@@ -522,7 +521,7 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   function nextFrom(screenId){
     if(screenId === 'break1'){ transitionTo('q3', 'Avançando pro próximo passo...'); }
     else if(screenId === 'authority'){ transitionTo('q4', 'Liberando as próximas perguntas...'); }
-    else if(screenId === 'recap'){ transitionTo('prepitch', 'Preparando sua oferta personalizada...'); }
+    else if(screenId === 'recap'){ transitionTo('antesdepois', 'Preparando sua oferta personalizada...'); }
     else if(screenId === 'prepitch'){ transitionTo('result', 'Liberando suas Receitas Virais de Natal...'); }
   }
 
@@ -562,6 +561,36 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
       }
       show(i);
     }, 1600);
+  }
+
+  var antesDepoisItems = [
+    {img:'assets/antes-depois/ad-01.jpg', caption:'De "sem decoração e sem preço" pra encomendas confirmadas'},
+    {img:'assets/antes-depois/ad-02.jpg', caption:'De insegura pra encomendas confirmadas com preço certo'},
+    {img:'assets/antes-depois/ad-03.jpg', caption:'De biscoito solto pra kit embalado que vende sozinho'},
+    {img:'assets/antes-depois/ad-04.jpg', caption:'Decoração, preço certo e embalagem pronta — nessa ordem'}
+  ];
+  function runAntesDepois(){
+    var n = capitalize(answers.name);
+    document.getElementById('adTitle').textContent = n + ', veja o que é possível...';
+    var dots = document.getElementById('adDots');
+    dots.innerHTML = '';
+    antesDepoisItems.forEach(function(){ var d = document.createElement('span'); dots.appendChild(d); });
+    var i = 0;
+    function show(idx){
+      document.getElementById('adImg').src = antesDepoisItems[idx].img;
+      document.getElementById('adCaption').textContent = antesDepoisItems[idx].caption;
+      Array.from(dots.children).forEach(function(d,di){ d.classList.toggle('on', di===idx); });
+    }
+    show(0);
+    var interval = setInterval(function(){
+      i++;
+      if(i >= antesDepoisItems.length){
+        clearInterval(interval);
+        transitionTo('prepitch', n + ', chegou a hora de decidir...');
+        return;
+      }
+      show(i);
+    }, 1700);
   }
 
   function runLoading(){
@@ -666,7 +695,7 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
       var current = document.querySelector('.screen.active');
       if(!current) return;
       var id = current.id.replace('screen-','');
-      if(id === 'result' || id === 'q1' || id === 'microloading') return;
+      if(id === 'result' || id === 'q1' || id === 'microloading' || id === 'proof' || id === 'antesdepois') return;
       shown = true;
       document.getElementById('exitOverlay').classList.add('active');
     });
