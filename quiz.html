@@ -158,7 +158,7 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   .peek-outer{overflow:hidden;border-radius:10px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
   .peek-row{display:flex;gap:10px;width:max-content;animation:scroll-left 26s linear infinite}
   @media (prefers-reduced-motion: reduce){ .peek-row{animation:none} }
-  .peek-page{flex:none;width:72px;height:96px;border-radius:6px;overflow:hidden;box-shadow:0 6px 14px rgba(42,28,20,.18);border:2px solid #fff;opacity:.92}
+  .peek-page{flex:none;width:92px;height:122px;border-radius:7px;overflow:hidden;box-shadow:0 6px 14px rgba(42,28,20,.18);border:2px solid #fff;opacity:.92}
   .peek-page img{width:100%;height:100%;object-fit:cover;display:block}
 
   .testi-strip{display:flex;gap:8px;overflow-x:auto;margin-bottom:18px;padding-bottom:4px}
@@ -364,6 +364,36 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
     <div class="commit-box">
       <p id="commitText">Você está pronta pra transformar isso em encomendas reais esse Natal?</p>
     </div>
+
+    <div class="inside-peek">
+      <p class="peek-label">👀 Veja por dentro o que você vai receber</p>
+      <div class="peek-outer">
+        <div class="peek-row">
+          <div class="peek-page"><img src="assets/pagina_receita_02.jpg" alt="Página de receita" loading="lazy"></div>
+          <div class="peek-page"><img src="assets/tecnica_contorno_lettering.jpg" alt="Técnica de decoração" loading="lazy"></div>
+          <div class="peek-page"><img src="assets/mockup_modulo_02.png" alt="Fichas técnicas" loading="lazy"></div>
+          <div class="peek-page"><img src="assets/pagina_receita_14.jpg" alt="Página de receita" loading="lazy"></div>
+          <div class="peek-page"><img src="assets/embalagem_caixa_01.jpg" alt="Modelo de caixa" loading="lazy"></div>
+          <div class="peek-page"><img src="assets/tecnica_biscoitos_carimbados.jpg" alt="Técnica de decoração" loading="lazy"></div>
+          <div class="peek-page"><img src="assets/mockup_modulo_04.png" alt="Guia de embalagem" loading="lazy"></div>
+          <div class="peek-page"><img src="assets/tags_natal_01.jpg" alt="Tags de Natal" loading="lazy"></div>
+          <div class="peek-page"><img src="assets/pagina_receita_17.jpg" alt="Página de receita" loading="lazy"></div>
+          <div class="peek-page"><img src="assets/embalagem_sacola_01.jpg" alt="Modelo de sacola" loading="lazy"></div>
+          <!-- loop duplicado pra continuidade -->
+          <div class="peek-page"><img src="assets/pagina_receita_02.jpg" alt="Página de receita" loading="lazy"></div>
+          <div class="peek-page"><img src="assets/tecnica_contorno_lettering.jpg" alt="Técnica de decoração" loading="lazy"></div>
+          <div class="peek-page"><img src="assets/mockup_modulo_02.png" alt="Fichas técnicas" loading="lazy"></div>
+          <div class="peek-page"><img src="assets/pagina_receita_14.jpg" alt="Página de receita" loading="lazy"></div>
+          <div class="peek-page"><img src="assets/embalagem_caixa_01.jpg" alt="Modelo de caixa" loading="lazy"></div>
+          <div class="peek-page"><img src="assets/tecnica_biscoitos_carimbados.jpg" alt="Técnica de decoração" loading="lazy"></div>
+          <div class="peek-page"><img src="assets/mockup_modulo_04.png" alt="Guia de embalagem" loading="lazy"></div>
+          <div class="peek-page"><img src="assets/tags_natal_01.jpg" alt="Tags de Natal" loading="lazy"></div>
+          <div class="peek-page"><img src="assets/pagina_receita_17.jpg" alt="Página de receita" loading="lazy"></div>
+          <div class="peek-page"><img src="assets/embalagem_sacola_01.jpg" alt="Modelo de sacola" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+
     <button class="btn btn-primary pulse" onclick="nextFrom('prepitch')">SIM, QUERO MINHAS RECEITAS VIRAIS 🔑</button>
   </section>
 
@@ -393,35 +423,6 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
         <li>🧮 <span><b>Guia de precificação</b> — pra saber exatamente quanto cobrar por biscoito e por caixa</span></li>
         <li>✅ <span><b>Garantia de 7 dias</b></span></li>
       </ul>
-    </div>
-
-    <div class="inside-peek">
-      <p class="peek-label">👀 Veja por dentro o que você vai receber</p>
-      <div class="peek-outer">
-        <div class="peek-row">
-          <div class="peek-page"><img src="assets/pagina_receita_02.jpg" alt="Página de receita" loading="lazy"></div>
-          <div class="peek-page"><img src="assets/tecnica_contorno_lettering.jpg" alt="Técnica de decoração" loading="lazy"></div>
-          <div class="peek-page"><img src="assets/mockup_modulo_02.png" alt="Fichas técnicas" loading="lazy"></div>
-          <div class="peek-page"><img src="assets/pagina_receita_14.jpg" alt="Página de receita" loading="lazy"></div>
-          <div class="peek-page"><img src="assets/embalagem_caixa_01.jpg" alt="Modelo de caixa" loading="lazy"></div>
-          <div class="peek-page"><img src="assets/tecnica_biscoitos_carimbados.jpg" alt="Técnica de decoração" loading="lazy"></div>
-          <div class="peek-page"><img src="assets/mockup_modulo_04.png" alt="Guia de embalagem" loading="lazy"></div>
-          <div class="peek-page"><img src="assets/tags_natal_01.jpg" alt="Tags de Natal" loading="lazy"></div>
-          <div class="peek-page"><img src="assets/pagina_receita_17.jpg" alt="Página de receita" loading="lazy"></div>
-          <div class="peek-page"><img src="assets/embalagem_sacola_01.jpg" alt="Modelo de sacola" loading="lazy"></div>
-          <!-- loop duplicado pra continuidade -->
-          <div class="peek-page"><img src="assets/pagina_receita_02.jpg" alt="Página de receita" loading="lazy"></div>
-          <div class="peek-page"><img src="assets/tecnica_contorno_lettering.jpg" alt="Técnica de decoração" loading="lazy"></div>
-          <div class="peek-page"><img src="assets/mockup_modulo_02.png" alt="Fichas técnicas" loading="lazy"></div>
-          <div class="peek-page"><img src="assets/pagina_receita_14.jpg" alt="Página de receita" loading="lazy"></div>
-          <div class="peek-page"><img src="assets/embalagem_caixa_01.jpg" alt="Modelo de caixa" loading="lazy"></div>
-          <div class="peek-page"><img src="assets/tecnica_biscoitos_carimbados.jpg" alt="Técnica de decoração" loading="lazy"></div>
-          <div class="peek-page"><img src="assets/mockup_modulo_04.png" alt="Guia de embalagem" loading="lazy"></div>
-          <div class="peek-page"><img src="assets/tags_natal_01.jpg" alt="Tags de Natal" loading="lazy"></div>
-          <div class="peek-page"><img src="assets/pagina_receita_17.jpg" alt="Página de receita" loading="lazy"></div>
-          <div class="peek-page"><img src="assets/embalagem_sacola_01.jpg" alt="Modelo de sacola" loading="lazy"></div>
-        </div>
-      </div>
     </div>
 
     <div class="testi-strip" id="testiStrip">
