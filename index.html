@@ -72,7 +72,7 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   .marquee-track span{padding:10px 48px;display:inline-block;font-size:14px;font-weight:700;letter-spacing:.02em}
   .marquee-track span.sep{color:var(--gold-light)}
   .marquee-track b{color:var(--gold-light)}
-  @keyframes scroll-left{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
+  @keyframes scroll-left{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
   @media (prefers-reduced-motion: reduce){ .marquee-track{animation:none;padding-left:20px} }
 
   /* HERO */
@@ -91,6 +91,21 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   .hero-actions{margin-top:24px;display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
   .hero-badges{display:flex;gap:20px;flex-wrap:wrap;margin-top:24px;justify-content:center}
   .hero-badge{display:flex;align-items:center;gap:8px;font-size:13.5px;color:#FBE3DF}
+
+  /* RATING STRIP */
+  .rating-strip{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+  .rating-avatars{display:flex}
+  .rating-avatars span{width:30px;height:30px;border-radius:50%;background:var(--gold-light);border:2px solid var(--red-darker);display:flex;align-items:center;justify-content:center;font-size:15px;margin-left:-10px}
+  .rating-avatars span:first-child{margin-left:0}
+  .rating-text{font-size:13.5px;font-weight:700;color:#fff}
+  .rating-text .stars{color:var(--gold-light);letter-spacing:1px}
+
+  /* PREVIEW STRIP (o que vc recebe, logo abaixo da headline) */
+  .preview-strip{margin-top:22px}
+  .preview-strip p{font-size:13px;font-weight:700;color:#FBE3DF;text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px}
+  .preview-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .preview-row img{width:72px;height:92px;object-fit:cover;border-radius:8px;border:2px solid rgba(255,255,255,.35);box-shadow:0 8px 18px rgba(0,0,0,.3)}
+  @media(max-width:480px){ .preview-row img{width:58px;height:74px} }
 
   /* MID CTA */
   .mid-cta{padding:26px 20px;text-align:center;background:var(--cream)}
@@ -241,13 +256,22 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
 <!-- HERO -->
 <header class="hero">
   <div class="container hero-inner">
-    <span class="badge-urgent">🔥 O Natal não espera — comece hoje</span>
-    <h1>Você não precisa testar, errar nem adivinhar o preço de venda — <em>já fizemos tudo isso por você.</em> Só falta vender e faturar até o Natal.</h1>
-    <div class="hero-mockup">
-      <img src="assets/banner_oferta_completa.png" alt="Capas dos módulos: 20 Receitas Virais, Fichas Técnicas, Embalagens e Apresentação para Venda, Guia de Embalagem Lucrativa" loading="eager">
+    <div class="rating-strip">
+      <div class="rating-avatars">
+        <span>👩</span><span>👩🏽</span><span>👩🏻</span><span>👩🏾</span><span>🧑🏻</span>
+      </div>
+      <span class="rating-text"><span class="stars">★★★★★</span> 4,9/5 · 369 avaliações</span>
     </div>
-    <p class="sub">Nada de curso caro e genérico que te deixa na mesma: são receitas <strong>já testadas</strong>, com ficha técnica e <strong>preço de venda já calculado</strong> pra cada uma — você não perde ingrediente errando a mão, nem cliente cobrando errado.</p>
-    <p class="support">Sem precisar ser confeiteira profissional. Fature de R$800 a R$5.000 até o Natal — só falta você decidir começar.</p>
+    <h1>Biscoitos Virais de Natal 🍪🎄<br><em>o kit pra vender sem testar, sem errar.</em></h1>
+    <div class="preview-strip">
+      <p>👀 Veja o que vem dentro</p>
+      <div class="preview-row">
+        <img src="assets/pagina_receita_02.jpg" alt="Prévia de receita" loading="eager">
+        <img src="assets/tecnica_contorno_lettering.jpg" alt="Prévia de técnica de decoração" loading="eager">
+        <img src="assets/embalagem_caixa_01.jpg" alt="Prévia de embalagem" loading="eager">
+        <img src="assets/mockup_modulo_03.png" alt="Prévia do guia de apresentação" loading="eager">
+      </div>
+    </div>
     <div class="hero-actions">
       <button class="btn btn-green pulse-green" onclick="document.getElementById('modulos').scrollIntoView({behavior:'smooth'})">QUERO VER TUDO QUE VOU RECEBER 🎄</button>
     </div>
@@ -616,14 +640,19 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLightbox(); });
 
   var OFFERS = {
-    completa: 'https://pay.hotmart.com/V108427395Y?checkoutMode=10&utm_source=chatgpt.com',
-    simples: 'https://pay.hotmart.com/Q108435013W?checkoutMode=10&utm_source=chatgpt.com'
+    completa: 'https://pay.hotmart.com/V108427395Y?checkoutMode=10',
+    simples: 'https://pay.hotmart.com/Q108435013W?checkoutMode=10'
   };
   function goToCheckout(key){
     if(typeof fbq === 'function'){
       fbq('track', 'InitiateCheckout', { content_name: key === 'completa' ? 'Oferta Completa' : 'Oferta Essencial' });
     }
-    window.location.href = OFFERS[key];
+    // Encaminha pro checkout os parâmetros UTM (utm_source, utm_campaign, utm_content etc.)
+    // que vieram do próprio anúncio na URL desta página, em vez de um valor fixo.
+    var incoming = window.location.search.replace(/^\?/, '');
+    var url = OFFERS[key];
+    if(incoming){ url += '&' + incoming; }
+    window.location.href = url;
   }
 
   document.querySelectorAll('.faq-item').forEach(function(item){
