@@ -115,9 +115,9 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   .id-list{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
   @media (max-width:900px){ .id-list{grid-template-columns:repeat(2,1fr)} }
   @media (max-width:560px){ .id-list{grid-template-columns:1fr} }
-  .id-item{display:flex;gap:10px;background:#fff;padding:14px 16px;border-radius:14px;box-shadow:0 6px 18px rgba(42,28,20,.07);border-left:4px solid var(--red);align-items:center}
-  .id-item .ico{flex:none;width:28px;height:28px;border-radius:50%;background:rgba(196,18,48,.1);display:flex;align-items:center;justify-content:center;color:var(--red);font-weight:800;font-size:13px}
-  .id-item p{font-size:14.5px}
+  .id-item{background:#fff;padding:20px 14px 16px;border-radius:16px;box-shadow:0 6px 18px rgba(42,28,20,.07);text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px}
+  .id-item .ico{flex:none;width:52px;height:52px;border-radius:50%;background:rgba(196,18,48,.08);display:flex;align-items:center;justify-content:center;font-size:26px}
+  .id-item p{font-size:14px;font-weight:600;color:var(--ink-soft);line-height:1.3}
   .id-closing{margin-top:24px;font-size:19px;font-weight:700;color:var(--red-dark);border-left:4px solid var(--gold);padding-left:18px}
 
   /* SOLUTION */
@@ -469,12 +469,12 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   <div class="container">
     <h2 class="h2">Alguma dessas frases já passou pela sua cabeça <span class="pop-green">este mês</span>?</h2>
     <div class="id-list">
-      <div class="id-item"><span class="ico">1</span><p>Já comprou curso ou e-book de receita e sentiu que pagou caro por muito pouco.</p></div>
-      <div class="id-item"><span class="ico">2</span><p>Tem medo de testar uma receita nova e desperdiçar ingrediente (e dinheiro).</p></div>
-      <div class="id-item"><span class="ico">3</span><p>Não sabe se está cobrando o preço certo — caro demais ou barato demais.</p></div>
-      <div class="id-item"><span class="ico">4</span><p>Acha que precisa ser "confeiteira profissional" pra vender biscoito decorado.</p></div>
-      <div class="id-item"><span class="ico">5</span><p>Tem pouco tempo livre entre casa, filhos e trabalho.</p></div>
-      <div class="id-item"><span class="ico">6</span><p>Quer começar com pouco investimento, sem comprar equipamento caro.</p></div>
+      <div class="id-item"><span class="ico">💸</span><p>Já pagou caro por curso que ensinou pouco</p></div>
+      <div class="id-item"><span class="ico">😬</span><p>Medo de errar e desperdiçar ingrediente</p></div>
+      <div class="id-item"><span class="ico">🤔</span><p>Não sabe quanto cobrar</p></div>
+      <div class="id-item"><span class="ico">👩‍🍳</span><p>Acha que precisa ser confeiteira profissional</p></div>
+      <div class="id-item"><span class="ico">⏰</span><p>Pouco tempo entre casa, filhos e trabalho</p></div>
+      <div class="id-item"><span class="ico">💰</span><p>Quer começar gastando pouco</p></div>
     </div>
     <p class="id-closing">Se marcou pelo menos duas, o que vem a seguir foi feito pra você.</p>
   </div>
