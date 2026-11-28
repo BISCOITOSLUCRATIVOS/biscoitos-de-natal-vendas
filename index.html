@@ -95,7 +95,7 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   /* RATING STRIP */
   .rating-strip{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:16px;flex-wrap:wrap}
   .rating-avatars{display:flex}
-  .rating-avatars img{width:30px;height:30px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.85);margin-left:-10px;box-shadow:0 2px 6px rgba(0,0,0,.3)}
+  .rating-avatars img{width:34px;height:34px;border-radius:50%;object-fit:cover;object-position:center;border:2px solid rgba(255,255,255,.9);margin-left:-9px;box-shadow:0 2px 6px rgba(0,0,0,.3)}
   .rating-avatars img:first-child{margin-left:0}
   .rating-text{font-size:13.5px;font-weight:700;color:#fff}
   .rating-text .stars{color:var(--gold-light);letter-spacing:1px}
@@ -142,16 +142,12 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   .testi-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--green-vivid);color:#fff;font-weight:800;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;padding:8px 18px;border-radius:999px;margin-bottom:16px}
   .testi-hint{text-align:center;font-size:13.5px;font-weight:700;color:var(--ink-soft);margin:0 0 14px}
   .testi-nav-wrap{position:relative;margin:0 0 6px}
-  .testi-outer{overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;padding:6px 20px 18px;scrollbar-width:thin;scrollbar-color:var(--green-vivid) transparent}
-  .testi-outer::-webkit-scrollbar{height:7px}
-  .testi-outer::-webkit-scrollbar-thumb{background:var(--green-vivid);border-radius:999px}
-  .testi-row{display:flex;gap:18px;width:max-content}
-  .testi-card{flex:none;width:300px;scroll-snap-align:center;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 14px 30px rgba(42,28,20,.18);border:5px solid #fff}
+  .testi-outer{overflow:hidden;padding:6px 0 18px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+  .testi-row{display:flex;gap:18px;width:max-content;animation:scroll-left 52s linear infinite}
+  @media (prefers-reduced-motion: reduce){ .testi-row{animation:none} }
+  .testi-card{flex:none;width:300px;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 14px 30px rgba(42,28,20,.18);border:5px solid #fff}
   .testi-card img{width:100%;display:block}
-  .testi-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:#fff;border:2px solid var(--gold-light);box-shadow:0 10px 22px rgba(42,28,20,.22);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;color:var(--ink);cursor:pointer;z-index:5}
-  .testi-arrow.prev{left:-6px}
-  .testi-arrow.next{right:-6px}
-  @media(max-width:780px){ .testi-arrow{display:none} }
+  @media(max-width:640px){ .testi-card{width:248px} }
   .testi-counter{display:flex;flex-wrap:wrap;justify-content:center;gap:34px;margin:14px 0 6px}
   .testi-counter .num{font-family:'Playfair Display',serif;font-size:34px;font-weight:800;color:var(--red-dark);display:block;line-height:1}
   .testi-counter .lbl{font-size:13.5px;color:var(--ink-soft);font-weight:600}
@@ -240,6 +236,7 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
 </head>
 <body>
 
+
 <!-- MARQUEE -->
 <div class="marquee-bar" role="note" aria-label="Aviso">
   <div class="marquee-track">
@@ -266,16 +263,7 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
       </div>
       <span class="rating-text"><span class="stars">★★★★★</span> 4,9/5 · 369 avaliações</span>
     </div>
-    <h1>Biscoitos Virais de Natal 🍪🎄<br><em>o kit pra vender sem testar, sem errar.</em></h1>
-    <div class="preview-strip">
-      <p>👀 Veja o que vem dentro</p>
-      <div class="preview-row">
-        <img src="assets/pagina_receita_02.jpg" alt="Prévia de receita" loading="eager">
-        <img src="assets/tecnica_contorno_lettering.jpg" alt="Prévia de técnica de decoração" loading="eager">
-        <img src="assets/embalagem_caixa_01.jpg" alt="Prévia de embalagem" loading="eager">
-        <img src="assets/mockup_modulo_03.png" alt="Prévia do guia de apresentação" loading="eager">
-      </div>
-    </div>
+    <h1>Biscoitos Virais de Natal 🍪🎄</h1>
     <div class="hero-actions">
       <button class="btn btn-green pulse-green" onclick="document.getElementById('modulos').scrollIntoView({behavior:'smooth'})">QUERO VER TUDO QUE VOU RECEBER 🎄</button>
     </div>
@@ -287,93 +275,11 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   </div>
 </header>
 
-<!-- DEPOIMENTOS -->
-<section class="section testimonials-section" id="depoimentos">
-  <div class="container center">
-    <span class="testi-eyebrow">📲 Direto do grupo de alunas</span>
-    <h2 class="h2">Quem comprou já está <span class="pop-green">vendendo de verdade</span></h2>
-  </div>
-
-  <p class="testi-hint">👉 Arraste pra o lado e veja os 11 prints reais, com calma</p>
-
-  <div class="testi-nav-wrap">
-    <button class="testi-arrow prev" onclick="document.getElementById('testiTrack').scrollBy({left:-320,behavior:'smooth'})" aria-label="Depoimento anterior">‹</button>
-    <div class="testi-outer" id="testiTrack">
-      <div class="testi-row">
-        <div class="testi-card"><img src="assets/depoimentos/depoimento-01.jpg" alt="Cláudia: 80 encomendas confirmadas com o material de biscoitos de Natal" loading="lazy"></div>
-        <div class="testi-card"><img src="assets/depoimentos/depoimento-02.jpg" alt="Renata: vendeu os primeiros 20 kits só para parentes" loading="lazy"></div>
-        <div class="testi-card"><img src="assets/depoimentos/depoimento-03.jpg" alt="Patrícia: 50 encomendas fechadas para dezembro" loading="lazy"></div>
-        <div class="testi-card"><img src="assets/depoimentos/depoimento-04.jpg" alt="Ivana: começou a produção dos biscoitos de Natal do material" loading="lazy"></div>
-        <div class="testi-card"><img src="assets/depoimentos/depoimento-05.jpg" alt="Ana Paula: encomendas não param de chegar, renda extra incrível" loading="lazy"></div>
-        <div class="testi-card"><img src="assets/depoimentos/depoimento-06.jpg" alt="Natália: 80 encomendas para o Natal graças ao material" loading="lazy"></div>
-        <div class="testi-card"><img src="assets/depoimentos/depoimento-07.jpg" alt="Marcelo: vendeu 20 kits só para parentes e vai produzir mais" loading="lazy"></div>
-        <div class="testi-card"><img src="assets/depoimentos/depoimento-08.jpg" alt="Flavia: 50 encomendas para dezembro, maior sucesso da região" loading="lazy"></div>
-        <div class="testi-card"><img src="assets/depoimentos/depoimento-09.jpg" alt="Cláudia: 80 encomendas, embalagens fazem toda a diferença" loading="lazy"></div>
-        <div class="testi-card"><img src="assets/depoimentos/depoimento-10.jpg" alt="Renata: primeiros kits vendidos, todos elogiaram sabor e apresentação" loading="lazy"></div>
-        <div class="testi-card"><img src="assets/depoimentos/depoimento-11.jpg" alt="Patrícia: 50 encomendas para dezembro, biscoitos lindos e deliciosos" loading="lazy"></div>
-      </div>
-    </div>
-    <button class="testi-arrow next" onclick="document.getElementById('testiTrack').scrollBy({left:320,behavior:'smooth'})" aria-label="Próximo depoimento">›</button>
-  </div>
-
-  <div class="container">
-    <div class="testi-counter">
-      <div><span class="num">500+</span><span class="lbl">alunas já usando o material</span></div>
-      <div><span class="num">80</span><span class="lbl">encomendas no melhor relato</span></div>
-      <div><span class="num">7 dias</span><span class="lbl">de garantia incondicional</span></div>
-    </div>
-    <div class="center" style="margin-top:8px">
-      <button class="btn btn-gold pulse" onclick="document.getElementById('ofertas').scrollIntoView({behavior:'smooth'})">QUERO SER A PRÓXIMA HISTÓRIA 🎄</button>
-    </div>
-  </div>
-</section>
-
-<!-- IDENTIFICAÇÃO -->
-<section class="section" id="identificacao">
-  <div class="container">
-    <h2 class="h2">Alguma dessas frases já passou pela sua cabeça <span class="pop-green">este mês</span>?</h2>
-    <div class="id-list">
-      <div class="id-item"><span class="ico">1</span><p>Já comprou curso ou e-book de receita e sentiu que pagou caro por muito pouco.</p></div>
-      <div class="id-item"><span class="ico">2</span><p>Tem medo de testar uma receita nova e desperdiçar ingrediente (e dinheiro).</p></div>
-      <div class="id-item"><span class="ico">3</span><p>Não sabe se está cobrando o preço certo — caro demais ou barato demais.</p></div>
-      <div class="id-item"><span class="ico">4</span><p>Acha que precisa ser "confeiteira profissional" pra vender biscoito decorado.</p></div>
-      <div class="id-item"><span class="ico">5</span><p>Tem pouco tempo livre entre casa, filhos e trabalho.</p></div>
-      <div class="id-item"><span class="ico">6</span><p>Quer começar com pouco investimento, sem comprar equipamento caro.</p></div>
-    </div>
-    <p class="id-closing">Se marcou pelo menos duas, o que vem a seguir foi feito pra você.</p>
-  </div>
-</section>
-
-<!-- SOLUÇÃO -->
-<section class="section solution">
-  <div class="container solution-grid">
-    <div>
-      <h2 class="h2">Tudo pra vender biscoitos de Natal, <span class="pop-green">já pronto</span></h2>
-      <p class="lead">Chega de curso caro que promete muito e entrega pouco. Aqui está o material completo — receitas já testadas, preço já calculado e tudo organizado pra você produzir e vender hoje, sem medo de errar.</p>
-      <div class="solution-points">
-        <div class="solution-point"><span class="check">✓</span><p><strong>20 receitas</strong> de biscoito de Natal já testadas, com passo a passo ilustrado — zero chute, zero desperdício.</p></div>
-        <div class="solution-point"><span class="check">✓</span><p><strong>6 técnicas de decoração</strong> explicadas em detalhe, do básico ao mais caprichado — sem precisar ser confeiteira profissional.</p></div>
-        <div class="solution-point"><span class="check">✓</span><p><strong>Fichas técnicas com preço de venda já calculado</strong> — ingredientes, rendimento e valores nutricionais de cada receita.</p></div>
-        <div class="solution-point"><span class="check">✓</span><p><strong>Modelos de embalagem</strong> prontos pra imprimir e montar — tags, caixas e sacolinhas.</p></div>
-        <div class="solution-point"><span class="check">✓</span><p><strong>Guia de apresentação e venda</strong>, com sugestões de kits e precificação — nunca mais venda no "achismo".</p></div>
-      </div>
-    </div>
-    <div>
-      <img src="assets/mockup_oferta_completa.png" alt="Visão geral dos 4 módulos do material" loading="lazy">
-    </div>
-  </div>
-</section>
-
-<div class="mid-cta">
-  <p>O Natal está cada vez mais perto.</p>
-  <button class="btn btn-primary pulse" onclick="document.getElementById('ofertas').scrollIntoView({behavior:'smooth'})">QUERO GARANTIR A MINHA OFERTA 🎄</button>
-</div>
-
 <!-- PDF FILMSTRIP -->
 <section class="section filmstrip-section" id="modulos">
   <div class="container">
     <h2 class="h2 on-dark">Veja <span class="pop-gold">por dentro</span> o que você vai receber</h2>
-    <p class="lead on-dark">Mais de 150 conteúdos completos, das receitas à embalagem.</p>
+    <p class="lead on-dark">Receitas, técnicas, fichas e embalagem — tudo pronto.</p>
   </div>
   <div class="filmstrip-outer">
     <div class="filmstrip" id="filmstrip">
@@ -422,7 +328,6 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
   </div>
 </section>
 
-
 <!-- VALOR -->
 <section class="section" id="valor">
   <div class="container">
@@ -462,25 +367,6 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
 
 <div class="mid-cta">
   <p>Quanto mais cedo você começa, mais cedo começa a vender.</p>
-  <button class="btn btn-primary pulse" onclick="document.getElementById('ofertas').scrollIntoView({behavior:'smooth'})">QUERO GARANTIR A MINHA OFERTA 🎄</button>
-</div>
-
-<!-- TRANSFORMAÇÃO -->
-<section class="section transform">
-  <div class="container">
-    <h2 class="h2 on-dark">De "quero tentar" pra <span class="pop-gold">"já tenho o que vender"</span></h2>
-    <div class="transform-grid">
-      <img src="assets/embalagem_preco_saquinho_postal.jpg" alt="Biscoitos embalados prontos para vender" loading="lazy">
-      <div class="transform-copy">
-        <p>Em vez de passar dias testando receita, procurando técnica no YouTube e inventando embalagem na correria, você abre o material e já encontra tudo pronto: <strong>o que fazer, como decorar, como embalar e como apresentar pra vender.</strong></p>
-        <p style="margin-top:16px">O tempo que você economiza não testando do zero é tempo que sobra pra produzir mais encomendas — e vender mais antes que o Natal passe.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="mid-cta">
-  <p>Faltam poucas semanas. Não deixe pra decidir em cima da hora.</p>
   <button class="btn btn-primary pulse" onclick="document.getElementById('ofertas').scrollIntoView({behavior:'smooth'})">QUERO GARANTIR A MINHA OFERTA 🎄</button>
 </div>
 
@@ -527,6 +413,97 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
     </div>
   </div>
 </section>
+
+<!-- DEPOIMENTOS -->
+<section class="section testimonials-section" id="depoimentos">
+  <div class="container center">
+    <span class="testi-eyebrow">📲 Direto do grupo de alunas</span>
+    <h2 class="h2">Quem comprou já está <span class="pop-green">vendendo de verdade</span></h2>
+  </div>
+
+  <p class="testi-hint">👉 11 prints reais, direto do grupo</p>
+
+  <div class="testi-nav-wrap">
+    <div class="testi-outer" id="testiTrack">
+      <div class="testi-row">
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-01.jpg" alt="Cláudia: 80 encomendas confirmadas com o material de biscoitos de Natal" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-02.jpg" alt="Renata: vendeu os primeiros 20 kits só para parentes" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-03.jpg" alt="Patrícia: 50 encomendas fechadas para dezembro" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-04.jpg" alt="Ivana: começou a produção dos biscoitos de Natal do material" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-05.jpg" alt="Ana Paula: encomendas não param de chegar, renda extra incrível" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-06.jpg" alt="Natália: 80 encomendas para o Natal graças ao material" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-07.jpg" alt="Marcelo: vendeu 20 kits só para parentes e vai produzir mais" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-08.jpg" alt="Flavia: 50 encomendas para dezembro, maior sucesso da região" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-09.jpg" alt="Cláudia: 80 encomendas, embalagens fazem toda a diferença" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-10.jpg" alt="Renata: primeiros kits vendidos, todos elogiaram sabor e apresentação" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-11.jpg" alt="Patrícia: 50 encomendas para dezembro, biscoitos lindos e deliciosos" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-01.jpg" alt="Cláudia: 80 encomendas confirmadas com o material de biscoitos de Natal" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-02.jpg" alt="Renata: vendeu os primeiros 20 kits só para parentes" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-03.jpg" alt="Patrícia: 50 encomendas fechadas para dezembro" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-04.jpg" alt="Ivana: começou a produção dos biscoitos de Natal do material" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-05.jpg" alt="Ana Paula: encomendas não param de chegar, renda extra incrível" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-06.jpg" alt="Natália: 80 encomendas para o Natal graças ao material" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-07.jpg" alt="Marcelo: vendeu 20 kits só para parentes e vai produzir mais" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-08.jpg" alt="Flavia: 50 encomendas para dezembro, maior sucesso da região" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-09.jpg" alt="Cláudia: 80 encomendas, embalagens fazem toda a diferença" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-10.jpg" alt="Renata: primeiros kits vendidos, todos elogiaram sabor e apresentação" loading="lazy"></div>
+        <div class="testi-card"><img src="assets/depoimentos/depoimento-11.jpg" alt="Patrícia: 50 encomendas para dezembro, biscoitos lindos e deliciosos" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="testi-counter">
+      <div><span class="num">500+</span><span class="lbl">alunas já usando o material</span></div>
+      <div><span class="num">80</span><span class="lbl">encomendas no melhor relato</span></div>
+      <div><span class="num">7 dias</span><span class="lbl">de garantia incondicional</span></div>
+    </div>
+    <div class="center" style="margin-top:8px">
+      <button class="btn btn-gold pulse" onclick="document.getElementById('ofertas').scrollIntoView({behavior:'smooth'})">QUERO SER A PRÓXIMA HISTÓRIA 🎄</button>
+    </div>
+  </div>
+</section>
+
+<!-- IDENTIFICAÇÃO -->
+<section class="section" id="identificacao">
+  <div class="container">
+    <h2 class="h2">Alguma dessas frases já passou pela sua cabeça <span class="pop-green">este mês</span>?</h2>
+    <div class="id-list">
+      <div class="id-item"><span class="ico">1</span><p>Já comprou curso ou e-book de receita e sentiu que pagou caro por muito pouco.</p></div>
+      <div class="id-item"><span class="ico">2</span><p>Tem medo de testar uma receita nova e desperdiçar ingrediente (e dinheiro).</p></div>
+      <div class="id-item"><span class="ico">3</span><p>Não sabe se está cobrando o preço certo — caro demais ou barato demais.</p></div>
+      <div class="id-item"><span class="ico">4</span><p>Acha que precisa ser "confeiteira profissional" pra vender biscoito decorado.</p></div>
+      <div class="id-item"><span class="ico">5</span><p>Tem pouco tempo livre entre casa, filhos e trabalho.</p></div>
+      <div class="id-item"><span class="ico">6</span><p>Quer começar com pouco investimento, sem comprar equipamento caro.</p></div>
+    </div>
+    <p class="id-closing">Se marcou pelo menos duas, o que vem a seguir foi feito pra você.</p>
+  </div>
+</section>
+
+<!-- SOLUÇÃO -->
+<section class="section solution">
+  <div class="container solution-grid">
+    <div>
+      <h2 class="h2">Tudo pra vender biscoitos de Natal, <span class="pop-green">já pronto</span></h2>
+      <p class="lead">Chega de testar na sorte. Aqui já vem tudo pronto.</p>
+      <div class="solution-points">
+        <div class="solution-point"><span class="check">✓</span><p><strong>20 receitas</strong> testadas — zero chute, zero desperdício.</p></div>
+        <div class="solution-point"><span class="check">✓</span><p><strong>6 técnicas de decoração</strong>, do básico ao caprichado.</p></div>
+        <div class="solution-point"><span class="check">✓</span><p><strong>Preço de venda já calculado</strong> em cada receita.</p></div>
+        <div class="solution-point"><span class="check">✓</span><p><strong>Embalagem pronta</strong> pra imprimir e montar.</p></div>
+        <div class="solution-point"><span class="check">✓</span><p><strong>Guia de venda</strong> — nunca mais no "achismo".</p></div>
+      </div>
+    </div>
+    <div>
+      <img src="assets/mockup_oferta_completa.png" alt="Visão geral dos 4 módulos do material" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<div class="mid-cta">
+  <p>O Natal está cada vez mais perto.</p>
+  <button class="btn btn-primary pulse" onclick="document.getElementById('ofertas').scrollIntoView({behavior:'smooth'})">QUERO GARANTIR A MINHA OFERTA 🎄</button>
+</div>
 
 <!-- CONFIANÇA -->
 <section class="section" id="confianca">
@@ -602,6 +579,7 @@ src="https://www.facebook.com/tr?id=1109818678482541&ev=PageView&noscript=1"
     </div>
   </div>
 </section>
+
 
 <footer>
   <div class="container">
